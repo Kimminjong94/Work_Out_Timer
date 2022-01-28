@@ -22,30 +22,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bnG-63-T19">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="717"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzn-Tu-Nzb">
-                                                <rect key="frame" x="75" y="33" width="264.5" height="119.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzn-Tu-Nzb">
+                                                <rect key="frame" x="176.5" y="33" width="61" height="120"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="100"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKT-7J-Iz0">
-                                                <rect key="frame" x="50" y="296" width="49" height="48"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="120" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBn-6Q-n8B">
-                                                <rect key="frame" x="309" y="296" width="66" height="48"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="60" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YpG-fd-Dsm">
-                                                <rect key="frame" x="182" y="296" width="50" height="48"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -56,13 +35,52 @@
                                                     <constraint firstAttribute="height" constant="50" id="MUe-yU-xCl"/>
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <connections>
+                                                    <action selector="startButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yUw-Vr-rNW"/>
+                                                </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시작" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOp-E9-WmT">
-                                                <rect key="frame" x="192" y="518.5" width="30" height="21"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOp-E9-WmT">
+                                                <rect key="frame" x="177.5" y="514" width="59" height="30"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xTd-4L-kfh">
+                                                <rect key="frame" x="40" y="290" width="75" height="55"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="30">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="count30Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="usr-47-kpJ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Yo-tu-RBg">
+                                                <rect key="frame" x="154" y="290" width="75" height="55"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="60">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="count60Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WrP-dD-P50"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u8r-A9-om8">
+                                                <rect key="frame" x="293" y="290" width="75" height="55"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="120">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="count120Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K2y-db-i1Z"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -96,6 +114,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="o9X-yU-TkW"/>
+                    <connections>
+                        <outlet property="countLabel" destination="xzn-Tu-Nzb" id="6iV-Tv-R6G"/>
+                        <outlet property="startStopLabel" destination="kOp-E9-WmT" id="7nw-qu-Rj3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -204,6 +226,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="1Jt-bB-ZDr" kind="relationship" relationship="viewControllers" id="yEx-WJ-pyM"/>
@@ -215,11 +238,11 @@
             </objects>
             <point key="canvasLocation" x="-491" y="1049"/>
         </scene>
-        <!--Item-->
+        <!--타이머-->
         <scene sceneID="VFq-D6-8eG">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1Jt-bB-ZDr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Up7-Ym-53W"/>
+                    <tabBarItem key="tabBarItem" title="타이머" image="timer" catalog="system" id="Up7-Ym-53W"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="PCb-Ps-7TF">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -234,11 +257,11 @@
             </objects>
             <point key="canvasLocation" x="939.13043478260875" y="79.6875"/>
         </scene>
-        <!--Item-->
+        <!--기록-->
         <scene sceneID="5vT-nX-J1r">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mzA-ho-kd8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="yIP-Ba-h97"/>
+                    <tabBarItem key="tabBarItem" title="기록" image="chart.bar.doc.horizontal" catalog="system" id="yIP-Ba-h97"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MzN-jT-1B2">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -253,11 +276,11 @@
             </objects>
             <point key="canvasLocation" x="939" y="801"/>
         </scene>
-        <!--Item-->
+        <!--세팅-->
         <scene sceneID="uk1-xY-v8v">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zln-Ok-SJ2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="iZU-yt-UJF"/>
+                    <tabBarItem key="tabBarItem" title="세팅" image="gear" catalog="system" id="iZU-yt-UJF"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="C2w-Jn-k4c">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -274,6 +297,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chart.bar.doc.horizontal" catalog="system" width="115" height="128"/>
+        <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="timer" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
