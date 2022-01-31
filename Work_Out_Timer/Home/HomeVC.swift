@@ -9,6 +9,7 @@ import UIKit
 
 class HomeVC: UIViewController {
     @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var startStopLabel: UILabel!
     
     
@@ -17,11 +18,12 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.startButton.layer.cornerRadius = 12
         
     }
     @IBAction func startButtonTapped(_ sender: UIButton) {
         
-        
+    
         if count == 0 {
             self.startStopLabel.text = "Start"
         } else {
@@ -51,7 +53,7 @@ class HomeVC: UIViewController {
     
     @objc func updateCounter() {
         if count > 0 {
-            print("\(count) seconds to the end of the world")
+            print("\(count) seconds left")
             count -= 1
             self.countLabel.text = "\(self.count)"
         }
