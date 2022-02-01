@@ -22,21 +22,20 @@ class HomeVC: UIViewController {
         
     }
     @IBAction func startButtonTapped(_ sender: UIButton) {
+            
         
-    
+        myTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateCounter), userInfo: nil, repeats: true)
+        
         if count == 0 {
             self.startStopLabel.text = "Start"
         } else {
-            self.myTimer.invalidate()
             self.startStopLabel.text = "Stop"
         }
-        DispatchQueue.main.async() {
-            self.myTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateCounter), userInfo: nil, repeats: true)
-        }
+
     }
     
     @IBAction func count30Tapped(_ sender: UIButton) {
-        self.count += 30
+        self.count += 5
         self.countLabel.text = "\(self.count)"
 
     }
@@ -52,11 +51,12 @@ class HomeVC: UIViewController {
     }
     
     @objc func updateCounter() {
+        self.countLabel.text = "\(self.count)"
         if count > 0 {
-            print("\(count) seconds left")
             count -= 1
-            self.countLabel.text = "\(self.count)"
+            print("\(count)")
         }
+
 
     }
 }
