@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,13 +24,16 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="717"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzn-Tu-Nzb">
-                                                <rect key="frame" x="161.5" y="33" width="91" height="179.5"/>
+                                                <rect key="frame" x="161.5" y="100" width="91" height="110"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="110" id="ZqQ-iQ-LS0"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="150"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jas-cB-8kH">
-                                                <rect key="frame" x="20" y="377.5" width="374" height="50"/>
+                                                <rect key="frame" x="20" y="375" width="374" height="50"/>
                                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="MUe-yU-xCl"/>
@@ -40,13 +44,13 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOp-E9-WmT">
-                                                <rect key="frame" x="178" y="387.5" width="58.5" height="30"/>
+                                                <rect key="frame" x="178" y="385" width="58.5" height="30"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="vdr-zo-Zdw">
-                                                <rect key="frame" x="36" y="272.5" width="342" height="55"/>
+                                                <rect key="frame" x="36" y="270" width="342" height="55"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xTd-4L-kfh">
                                                         <rect key="frame" x="0.0" y="0.0" width="64" height="55"/>
@@ -83,9 +87,27 @@
                                                     </button>
                                                 </subviews>
                                             </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7OJ-nZ-WlR">
+                                                <rect key="frame" x="354" y="100" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="UMa-dI-8ce"/>
+                                                    <constraint firstAttribute="width" constant="40" id="pmk-rV-iuA"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal">
+                                                    <imageReference key="image" image="gobackward" catalog="system" symbolScale="large"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="large" weight="bold"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="resetButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f3f-5m-flN"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstItem="7OJ-nZ-WlR" firstAttribute="top" secondItem="xzn-Tu-Nzb" secondAttribute="top" id="2KV-gB-zbL"/>
                                             <constraint firstItem="xzn-Tu-Nzb" firstAttribute="centerX" secondItem="bnG-63-T19" secondAttribute="centerX" id="7lv-mQ-YfM"/>
                                             <constraint firstItem="vdr-zo-Zdw" firstAttribute="top" secondItem="xzn-Tu-Nzb" secondAttribute="bottom" constant="60" id="8ew-ZO-5jG"/>
                                             <constraint firstItem="vdr-zo-Zdw" firstAttribute="centerX" secondItem="bnG-63-T19" secondAttribute="centerX" id="GeM-Fo-Wok"/>
@@ -93,9 +115,10 @@
                                             <constraint firstItem="kOp-E9-WmT" firstAttribute="centerY" secondItem="jas-cB-8kH" secondAttribute="centerY" id="L8q-gG-Nbc"/>
                                             <constraint firstAttribute="height" constant="717" id="Pmu-9e-rq7"/>
                                             <constraint firstItem="jas-cB-8kH" firstAttribute="leading" secondItem="bnG-63-T19" secondAttribute="leading" constant="20" id="YgH-GS-cuw"/>
+                                            <constraint firstAttribute="trailing" secondItem="7OJ-nZ-WlR" secondAttribute="trailing" constant="20" id="iMh-5d-ghf"/>
                                             <constraint firstItem="jas-cB-8kH" firstAttribute="top" secondItem="vdr-zo-Zdw" secondAttribute="bottom" constant="50" id="jo7-Ra-tEs"/>
                                             <constraint firstAttribute="trailing" secondItem="jas-cB-8kH" secondAttribute="trailing" constant="20" id="nWA-b3-nFs"/>
-                                            <constraint firstItem="xzn-Tu-Nzb" firstAttribute="top" secondItem="bnG-63-T19" secondAttribute="top" constant="33" id="rHe-Hw-mQp"/>
+                                            <constraint firstItem="xzn-Tu-Nzb" firstAttribute="top" secondItem="bnG-63-T19" secondAttribute="top" constant="100" id="rHe-Hw-mQp"/>
                                             <constraint firstItem="kOp-E9-WmT" firstAttribute="centerX" secondItem="jas-cB-8kH" secondAttribute="centerX" id="x6O-6L-xYL"/>
                                         </constraints>
                                     </view>
@@ -121,6 +144,7 @@
                     <navigationItem key="navigationItem" id="o9X-yU-TkW"/>
                     <connections>
                         <outlet property="countLabel" destination="xzn-Tu-Nzb" id="6iV-Tv-R6G"/>
+                        <outlet property="resetButton" destination="7OJ-nZ-WlR" id="WpL-d2-m6l"/>
                         <outlet property="startButton" destination="jas-cB-8kH" id="03f-N7-9IE"/>
                         <outlet property="startStopLabel" destination="kOp-E9-WmT" id="7nw-qu-Rj3"/>
                     </connections>
@@ -315,6 +339,7 @@
     <resources>
         <image name="chart.bar.doc.horizontal" catalog="system" width="115" height="128"/>
         <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="gobackward" catalog="system" width="121" height="128"/>
         <image name="timer" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
