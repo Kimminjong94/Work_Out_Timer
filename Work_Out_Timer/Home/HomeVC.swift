@@ -97,4 +97,4 @@ class HomeVC: UIViewController {
         self.startButton.backgroundColor = UIColor.systemGray2
     }
 }
-//변경
+//변경 바꾸기
