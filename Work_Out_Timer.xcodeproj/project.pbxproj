@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5806794027AD11D500E03045 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5806793F27AD11D500E03045 /* GoogleService-Info.plist */; };
 		585BA28B279BFCB900BB2886 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585BA28A279BFCB900BB2886 /* AppDelegate.swift */; };
 		585BA28D279BFCB900BB2886 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585BA28C279BFCB900BB2886 /* SceneDelegate.swift */; };
 		585BA28F279BFCB900BB2886 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585BA28E279BFCB900BB2886 /* HomeVC.swift */; };
 		585BA292279BFCB900BB2886 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 585BA290279BFCB900BB2886 /* Main.storyboard */; };
 		585BA294279BFCBA00BB2886 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 585BA293279BFCBA00BB2886 /* Assets.xcassets */; };
 		585BA297279BFCBA00BB2886 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 585BA295279BFCBA00BB2886 /* LaunchScreen.storyboard */; };
+		5870EA8527AE46DC005B9E21 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5870EA8427AE46DC005B9E21 /* RegisterVC.swift */; };
+		5870EA8727AE46E6005B9E21 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5870EA8627AE46E6005B9E21 /* LoginVC.swift */; };
 		58C2787F27A2A55300582CFC /* RecordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C2787E27A2A55300582CFC /* RecordVC.swift */; };
 		58C2788127A2A5C200582CFC /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C2788027A2A5C200582CFC /* SettingVC.swift */; };
 		58D5604A27AD0A2A009FA9B2 /* LaunchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D5604927AD0A2A009FA9B2 /* LaunchVC.swift */; };
@@ -21,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		1483E6A443DF25C1CA35424B /* Pods-Work_Out_Timer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Work_Out_Timer.release.xcconfig"; path = "Target Support Files/Pods-Work_Out_Timer/Pods-Work_Out_Timer.release.xcconfig"; sourceTree = "<group>"; };
+		5806793F27AD11D500E03045 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		585BA287279BFCB900BB2886 /* Work_Out_Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Work_Out_Timer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		585BA28A279BFCB900BB2886 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		585BA28C279BFCB900BB2886 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,6 +33,8 @@
 		585BA293279BFCBA00BB2886 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		585BA296279BFCBA00BB2886 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		585BA298279BFCBA00BB2886 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5870EA8427AE46DC005B9E21 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		5870EA8627AE46E6005B9E21 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		58C2787E27A2A55300582CFC /* RecordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordVC.swift; sourceTree = "<group>"; };
 		58C2788027A2A5C200582CFC /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
 		58D5604927AD0A2A009FA9B2 /* LaunchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchVC.swift; sourceTree = "<group>"; };
@@ -69,15 +75,24 @@
 		585BA289279BFCB900BB2886 /* Work_Out_Timer */ = {
 			isa = PBXGroup;
 			children = (
-				58D5604927AD0A2A009FA9B2 /* LaunchVC.swift */,
+				5870EA8327AE46C5005B9E21 /* Launch */,
 				585BA290279BFCB900BB2886 /* Main.storyboard */,
 				58C2788227A2A5D200582CFC /* Home */,
 				58C2788327A2A5D900582CFC /* Record */,
 				58C2788427A2A5DF00582CFC /* Setting */,
 				58C2787D27A2A51C00582CFC /* Others */,
 				585BA298279BFCBA00BB2886 /* Info.plist */,
+				5806793F27AD11D500E03045 /* GoogleService-Info.plist */,
 			);
 			path = Work_Out_Timer;
+			sourceTree = "<group>";
+		};
+		5870EA8327AE46C5005B9E21 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				58D5604927AD0A2A009FA9B2 /* LaunchVC.swift */,
+			);
+			path = Launch;
 			sourceTree = "<group>";
 		};
 		58C2787D27A2A51C00582CFC /* Others */ = {
@@ -111,6 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				58C2788027A2A5C200582CFC /* SettingVC.swift */,
+				5870EA8427AE46DC005B9E21 /* RegisterVC.swift */,
+				5870EA8627AE46E6005B9E21 /* LoginVC.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -129,7 +146,6 @@
 				B617A3BCFC4C7548F9D738DA /* Pods-Work_Out_Timer.debug.xcconfig */,
 				1483E6A443DF25C1CA35424B /* Pods-Work_Out_Timer.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -194,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				585BA297279BFCBA00BB2886 /* LaunchScreen.storyboard in Resources */,
+				5806794027AD11D500E03045 /* GoogleService-Info.plist in Resources */,
 				585BA294279BFCBA00BB2886 /* Assets.xcassets in Resources */,
 				585BA292279BFCB900BB2886 /* Main.storyboard in Resources */,
 			);
@@ -250,8 +267,10 @@
 			files = (
 				585BA28F279BFCB900BB2886 /* HomeVC.swift in Sources */,
 				58C2787F27A2A55300582CFC /* RecordVC.swift in Sources */,
+				5870EA8727AE46E6005B9E21 /* LoginVC.swift in Sources */,
 				58C2788127A2A5C200582CFC /* SettingVC.swift in Sources */,
 				585BA28B279BFCB900BB2886 /* AppDelegate.swift in Sources */,
+				5870EA8527AE46DC005B9E21 /* RegisterVC.swift in Sources */,
 				585BA28D279BFCB900BB2886 /* SceneDelegate.swift in Sources */,
 				58D5604A27AD0A2A009FA9B2 /* LaunchVC.swift in Sources */,
 			);

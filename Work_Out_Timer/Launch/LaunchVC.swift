@@ -6,12 +6,16 @@
 //
 
 import UIKit
+import CLTypingLabel
 
 
 class LaunchVC: UIViewController {
-
+    @IBOutlet weak var titleLabel: CLTypingLabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        titleLabel.text = "Workout Timer"
 
     }
 
