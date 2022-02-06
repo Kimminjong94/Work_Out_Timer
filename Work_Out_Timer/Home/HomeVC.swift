@@ -23,6 +23,10 @@ class HomeVC: UIViewController {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBar.isHidden = false
+    }
     
     //MARK: - 타이머 시작 버튼
     @IBAction func startButtonTapped(_ sender: UIButton) {
@@ -97,4 +101,3 @@ class HomeVC: UIViewController {
         self.startButton.backgroundColor = UIColor.systemGray2
     }
 }
-//변경 바꾸기
