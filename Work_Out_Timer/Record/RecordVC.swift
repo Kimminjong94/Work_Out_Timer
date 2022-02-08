@@ -1,9 +1,8 @@
-//
+
 //  RecordVC.swift
 //  Work_Out_Timer
 //
-//  Created by 김민종 on 2022/01/27.
-//
+//  Created by 김민종 on 2022/01/27
 
 import UIKit
 
@@ -13,7 +12,6 @@ class RecordVC: UIViewController {
         super.viewDidLoad()
 
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true

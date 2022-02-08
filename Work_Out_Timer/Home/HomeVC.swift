@@ -72,7 +72,6 @@ class HomeVC: UIViewController {
             self.startButton.backgroundColor = UIColor.black
         }
     }
-    
     //MARK: - 30, 60, 120초 타이머 버튼
     @IBAction func count30Tapped(_ sender: UIButton) {
         self.count += 30
@@ -89,8 +88,8 @@ class HomeVC: UIViewController {
         self.countLabel.text = "\(self.count)"
         buttonEnable()
     }
-    
     //MARK: - 리셋 버튼
+    
     @IBAction func resetButtonTapped(_ sender: Any) {
         self.myTimer.invalidate()
         isTimerRunning = false

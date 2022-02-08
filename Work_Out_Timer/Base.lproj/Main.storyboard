@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="R1T-NH-GcF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QyZ-6C-gAc">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -287,10 +287,10 @@
             </objects>
             <point key="canvasLocation" x="-1362.3188405797102" y="1048.6607142857142"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Base Tab Bar View Controller-->
         <scene sceneID="ezX-YQ-cnf">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="uVg-dO-9Wt" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="BaseTabBarViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uVg-dO-9Wt" customClass="BaseTabBarViewController" customModule="Work_Out_Timer" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xYp-8i-ZxU">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -345,7 +345,7 @@
                                                     <constraint firstAttribute="height" constant="50" id="It4-ka-PXR"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D7v-cR-jFs">
                                                 <rect key="frame" x="20" y="370" width="374" height="50"/>
@@ -354,6 +354,9 @@
                                                     <constraint firstAttribute="height" constant="50" id="xfe-sO-L9w"/>
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <connections>
+                                                    <action selector="registerPressed:" destination="iOc-nZ-NPc" eventType="touchUpInside" id="Rga-Gj-7nZ"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원가입하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B3C-Qi-fMp">
                                                 <rect key="frame" x="163" y="384.5" width="88.5" height="21"/>
@@ -400,6 +403,10 @@
                             <constraint firstItem="rCO-Yx-V3O" firstAttribute="leading" secondItem="ScW-LX-08z" secondAttribute="leading" id="wVh-vV-3fw"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextfield" destination="cbf-q7-iex" id="Mnb-HK-TBb"/>
+                        <outlet property="passwordTextfield" destination="KFA-GH-lCX" id="93g-MQ-hCp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h8p-DA-Qkc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -442,6 +449,9 @@
                                                     <constraint firstAttribute="height" constant="50" id="pBQ-s6-SQx"/>
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <connections>
+                                                    <action selector="LoginPressed:" destination="QyZ-6C-gAc" eventType="touchUpInside" id="zSt-Te-eMi"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yq4-EM-3FK">
                                                 <rect key="frame" x="185" y="374.5" width="44.5" height="21"/>
@@ -485,6 +495,10 @@
                             <constraint firstItem="ScY-Re-T2c" firstAttribute="top" secondItem="jLS-MN-EAx" secondAttribute="top" id="iea-cs-qaZ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTF" destination="BRL-kf-fJG" id="j9k-Q2-M2D"/>
+                        <outlet property="passwordTF" destination="0BQ-ZR-o5k" id="1U9-ha-TVh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="184-kg-MIF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

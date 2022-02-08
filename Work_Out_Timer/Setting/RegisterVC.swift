@@ -6,8 +6,13 @@
 //
 
 import UIKit
+import Firebase
 
 class RegisterVC: UIViewController {
+    
+    @IBOutlet weak var emailTextfield: UITextField!
+    @IBOutlet weak var passwordTextfield: UITextField!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,5 +26,23 @@ class RegisterVC: UIViewController {
         super.viewWillDisappear(animated)
         self.tabBarController?.tabBar.isHidden = false
     }
+    @IBAction func registerPressed(_ sender: Any) {
 
+        
+        if let email = emailTextfield.text, let password = passwordTextfield.text{
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            if let e = error {
+                print(e.localizedDescription)
+            } else {
+                guard let navigation = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "BaseTabBarViewController") as? BaseTabBarViewController else { return }
+                navigation.modalPresentationStyle = .overFullScreen
+                self.present(navigation, animated: true, completion: nil)
+                
+            }
+            
+            
+        }
+        }
+    }
+    
 }
