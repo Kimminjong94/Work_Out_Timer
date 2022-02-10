@@ -10,6 +10,8 @@ target 'Work_Out_Timer' do
 pod 'CLTypingLabel'
 pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
+pod 'Tabman', '~> 2.11'
+
 
 
 end

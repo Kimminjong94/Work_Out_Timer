@@ -39,8 +39,6 @@ class RegisterVC: UIViewController {
                 self.present(navigation, animated: true, completion: nil)
                 
             }
-            
-            
         }
         }
     }

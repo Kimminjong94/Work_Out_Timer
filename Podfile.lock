@@ -430,12 +430,16 @@ PODS:
     - nanopb/encode (= 2.30908.0)
   - nanopb/decode (2.30908.0)
   - nanopb/encode (2.30908.0)
+  - Pageboy (3.6.2)
   - PromisesObjC (2.0.0)
+  - Tabman (2.11.1):
+    - Pageboy (~> 3.6.0)
 
 DEPENDENCIES:
   - CLTypingLabel
   - Firebase/Auth
   - Firebase/Firestore
+  - Tabman (~> 2.11)
 
 SPEC REPOS:
   trunk:
@@ -454,7 +458,9 @@ SPEC REPOS:
     - GTMSessionFetcher
     - leveldb-library
     - nanopb
+    - Pageboy
     - PromisesObjC
+    - Tabman
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
@@ -472,8 +478,10 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 43748f93435c2aa068b1cbe39655aaf600652e91
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
+  Pageboy: cf121b9dd48c63f3f281b2a9ec93d02e0f23879b
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
+  Tabman: 792ac76fd1ec95af175c93db880a3c47cabedc91
 
-PODFILE CHECKSUM: 3347a6b328b9517773ee772447796b7f6a50c32a
+PODFILE CHECKSUM: 2e4f20b7c4c0020c42af6badc29fddb1e539bd54
 
 COCOAPODS: 1.11.2
