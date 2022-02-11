@@ -47,20 +47,25 @@ class HomeVC: UIViewController {
     //MARK: - 타이머 관련 메소드
     // 타이머 메소드
     func runTimer() {
-        myTimer = Timer.scheduledTimer(
-            timeInterval: 1.0,
-            target: self,
-            selector: #selector(updateCounter),
-            userInfo: nil,
-            repeats: true)
-        isTimerRunning = true
+        
+        DispatchQueue.main.async() {
+            self.myTimer = Timer.scheduledTimer(
+                timeInterval: 1.0,
+                target: self,
+                selector: #selector(self.updateCounter),
+                userInfo: nil,
+                repeats: true)
+            self.isTimerRunning = true
+        }
+
     }
     // 타이머 메소드 셀렉터
     @objc func updateCounter() {
-        self.countLabel.text = "\(self.count)"
         if count > 0 {
             count -= 1
             print("\(count)")
+            self.countLabel.text = "\(self.count)"
+
 
         } else if count < 1 {
             self.startStopLabel.text = "Start"
