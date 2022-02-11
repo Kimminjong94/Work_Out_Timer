@@ -36,13 +36,13 @@ class RecordVC: TabmanViewController {
 
         // Create bar
         let bar = TMBar.ButtonBar()
-        bar.layout.transitionStyle = .snap // Customize
+//        bar.layout.transitionStyle = .snap // Customize
 
         // Add to view
         addBar(bar, dataSource: self, at: .top)
         
         bar.backgroundView.style = .clear
-        bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 10.0)
+        bar.layout.contentInset = UIEdgeInsets(top: 50.0, left: 0.0, bottom: 0.0, right: 0.0)
         bar.buttons.customize { (button) in
                     button.tintColor = .systemGray
                     button.selectedTintColor = .black
@@ -53,9 +53,11 @@ class RecordVC: TabmanViewController {
         bar.indicator.overscrollBehavior = .compress
         bar.indicator.overscrollBehavior = .bounce
 //        bar.layout.alignment = .centerDistributed
-        bar.layout.contentMode = .intrinsic
-        bar.layout.interButtonSpacing = 30
+        bar.layout.contentMode = .fit
+//        bar.layout.interButtonSpacing = 30
         bar.backgroundColor = .white
+        
+
         
         
     }
