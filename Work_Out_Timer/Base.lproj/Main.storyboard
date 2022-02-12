@@ -183,14 +183,44 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="euM-cT-OSa">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                         <subviews>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lS3-CY-Upg">
-                                                <rect key="frame" x="183" y="422" width="49" height="31"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </switch>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PvV-aT-yPC">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="761"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mhe-SJ-7Pj">
+                                                    <size key="itemSize" width="128" height="128"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells/>
+                                            </collectionView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rqY-Rz-LGF">
+                                                <rect key="frame" x="10" y="766" width="394" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="zVs-rQ-vnw"/>
+                                                </constraints>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain">
+                                                    <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="25" scale="large" weight="medium"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="plusButtonPressed:" destination="ans-OQ-f25" eventType="touchUpInside" id="K9q-LJ-SqZ"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstItem="rqY-Rz-LGF" firstAttribute="leading" secondItem="euM-cT-OSa" secondAttribute="leading" constant="10" id="1Jm-Cm-aBu"/>
+                                            <constraint firstAttribute="trailing" secondItem="PvV-aT-yPC" secondAttribute="trailing" id="Ajw-SC-4dp"/>
+                                            <constraint firstAttribute="trailing" secondItem="rqY-Rz-LGF" secondAttribute="trailing" constant="10" id="QQw-4m-8Et"/>
+                                            <constraint firstItem="PvV-aT-yPC" firstAttribute="leading" secondItem="euM-cT-OSa" secondAttribute="leading" id="R9t-MJ-5Ob"/>
+                                            <constraint firstItem="PvV-aT-yPC" firstAttribute="top" secondItem="euM-cT-OSa" secondAttribute="top" id="Uuz-55-iIf"/>
+                                            <constraint firstItem="rqY-Rz-LGF" firstAttribute="top" secondItem="PvV-aT-yPC" secondAttribute="bottom" constant="5" id="mKQ-4g-z9u"/>
                                             <constraint firstAttribute="height" constant="896" id="sth-8N-LUM"/>
+                                            <constraint firstAttribute="bottom" secondItem="rqY-Rz-LGF" secondAttribute="bottom" constant="80" id="yuj-wb-rLi"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -212,6 +242,11 @@
                             <constraint firstItem="Jfl-QR-LTz" firstAttribute="leading" secondItem="bZD-Wv-1Rp" secondAttribute="leading" id="vDD-il-a8G"/>
                         </constraints>
                     </view>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="mondayCV" destination="PvV-aT-yPC" id="g0R-9Z-TAJ"/>
+                        <outlet property="plusButton" destination="rqY-Rz-LGF" id="W8A-mY-gAa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IpX-VV-UvT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -697,12 +732,16 @@
         <image name="chart.bar.doc.horizontal" catalog="system" width="115" height="128"/>
         <image name="gear" catalog="system" width="128" height="119"/>
         <image name="gobackward" catalog="system" width="121" height="128"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="timer" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5806794027AD11D500E03045 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5806793F27AD11D500E03045 /* GoogleService-Info.plist */; };
+		5835A63427B649B30044109C /* MondayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5835A63227B649B30044109C /* MondayCell.swift */; };
+		5835A63527B649B30044109C /* MondayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5835A63327B649B30044109C /* MondayCell.xib */; };
 		584DC4A127B4FA38007480F4 /* MondayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584DC4A027B4FA38007480F4 /* MondayVC.swift */; };
 		584DC4A327B4FA51007480F4 /* TuesdayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584DC4A227B4FA51007480F4 /* TuesdayVC.swift */; };
 		584DC4A627B4FA88007480F4 /* WednesdayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584DC4A527B4FA88007480F4 /* WednesdayVC.swift */; };
@@ -33,6 +35,8 @@
 /* Begin PBXFileReference section */
 		1483E6A443DF25C1CA35424B /* Pods-Work_Out_Timer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Work_Out_Timer.release.xcconfig"; path = "Target Support Files/Pods-Work_Out_Timer/Pods-Work_Out_Timer.release.xcconfig"; sourceTree = "<group>"; };
 		5806793F27AD11D500E03045 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5835A63227B649B30044109C /* MondayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MondayCell.swift; sourceTree = "<group>"; };
+		5835A63327B649B30044109C /* MondayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MondayCell.xib; sourceTree = "<group>"; };
 		584DC4A027B4FA38007480F4 /* MondayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MondayVC.swift; sourceTree = "<group>"; };
 		584DC4A227B4FA51007480F4 /* TuesdayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuesdayVC.swift; sourceTree = "<group>"; };
 		584DC4A527B4FA88007480F4 /* WednesdayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WednesdayVC.swift; sourceTree = "<group>"; };
@@ -70,10 +74,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5835A63127B649950044109C /* Monday */ = {
+			isa = PBXGroup;
+			children = (
+				5835A63727B649BF0044109C /* Cell */,
+				584DC4A027B4FA38007480F4 /* MondayVC.swift */,
+			);
+			path = Monday;
+			sourceTree = "<group>";
+		};
+		5835A63727B649BF0044109C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5835A63227B649B30044109C /* MondayCell.swift */,
+				5835A63327B649B30044109C /* MondayCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		584DC4A427B4FA5B007480F4 /* Week */ = {
 			isa = PBXGroup;
 			children = (
-				584DC4A027B4FA38007480F4 /* MondayVC.swift */,
+				5835A63127B649950044109C /* Monday */,
 				584DC4A227B4FA51007480F4 /* TuesdayVC.swift */,
 				584DC4A527B4FA88007480F4 /* WednesdayVC.swift */,
 				584DC4A727B4FA98007480F4 /* ThursdayVC.swift */,
@@ -241,6 +263,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5835A63527B649B30044109C /* MondayCell.xib in Resources */,
 				585BA297279BFCBA00BB2886 /* LaunchScreen.storyboard in Resources */,
 				5806794027AD11D500E03045 /* GoogleService-Info.plist in Resources */,
 				585BA294279BFCBA00BB2886 /* Assets.xcassets in Resources */,
@@ -309,6 +332,7 @@
 				585BA28B279BFCB900BB2886 /* AppDelegate.swift in Sources */,
 				584DC4A127B4FA38007480F4 /* MondayVC.swift in Sources */,
 				5870EA8527AE46DC005B9E21 /* RegisterVC.swift in Sources */,
+				5835A63427B649B30044109C /* MondayCell.swift in Sources */,
 				584DC4A627B4FA88007480F4 /* WednesdayVC.swift in Sources */,
 				584DC4AC27B4FABB007480F4 /* SaturdayVC.swift in Sources */,
 				585BA28D279BFCB900BB2886 /* SceneDelegate.swift in Sources */,

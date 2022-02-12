@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MondayCell" id="gTV-IL-0wX" customClass="MondayCell" customModule="Work_Out_Timer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="481" height="108"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="481" height="108"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EYn-pw-v26">
+                        <rect key="frame" x="0.0" y="0.0" width="481" height="108"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="운동이름" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cNr-kV-CSl">
+                                <rect key="frame" x="10" y="37" width="150" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="ZhW-p1-K1o"/>
+                                    <constraint firstAttribute="height" constant="34" id="nF2-CC-Klr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="무게" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iMu-WY-xxG">
+                                <rect key="frame" x="170" y="37" width="52.5" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="세트수" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2co-TB-wXy">
+                                <rect key="frame" x="320" y="37" width="64.5" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="반복횟수" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mJH-h9-h5f">
+                                <rect key="frame" x="394.5" y="37" width="76.5" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Oq-eX-mCH">
+                                <rect key="frame" x="10" y="107" width="461" height="1"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="dXu-eP-Swj"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cNr-kV-CSl" firstAttribute="centerY" secondItem="EYn-pw-v26" secondAttribute="centerY" id="80U-eR-Edq"/>
+                            <constraint firstItem="iMu-WY-xxG" firstAttribute="centerY" secondItem="cNr-kV-CSl" secondAttribute="centerY" id="Gv0-vU-3W2"/>
+                            <constraint firstItem="3Oq-eX-mCH" firstAttribute="leading" secondItem="EYn-pw-v26" secondAttribute="leading" constant="10" id="NN7-wT-bS1"/>
+                            <constraint firstItem="iMu-WY-xxG" firstAttribute="leading" secondItem="cNr-kV-CSl" secondAttribute="trailing" constant="10" id="OHS-QF-qQM"/>
+                            <constraint firstAttribute="trailing" secondItem="3Oq-eX-mCH" secondAttribute="trailing" constant="10" id="UjE-PY-c8N"/>
+                            <constraint firstItem="cNr-kV-CSl" firstAttribute="leading" secondItem="EYn-pw-v26" secondAttribute="leading" constant="10" id="WiS-PR-MvI"/>
+                            <constraint firstItem="mJH-h9-h5f" firstAttribute="centerY" secondItem="EYn-pw-v26" secondAttribute="centerY" id="YFN-bP-Ee4"/>
+                            <constraint firstAttribute="bottom" secondItem="3Oq-eX-mCH" secondAttribute="bottom" id="hBL-Xl-vyp"/>
+                            <constraint firstItem="mJH-h9-h5f" firstAttribute="leading" secondItem="2co-TB-wXy" secondAttribute="trailing" constant="10" id="lrR-xu-Uho"/>
+                            <constraint firstItem="mJH-h9-h5f" firstAttribute="centerY" secondItem="2co-TB-wXy" secondAttribute="centerY" id="uh0-iD-dKN"/>
+                            <constraint firstAttribute="trailing" secondItem="mJH-h9-h5f" secondAttribute="trailing" constant="10" id="ww9-sB-OWJ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="EYn-pw-v26" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="CeF-35-D9v"/>
+                <constraint firstAttribute="trailing" secondItem="EYn-pw-v26" secondAttribute="trailing" id="FxV-vF-zX9"/>
+                <constraint firstItem="EYn-pw-v26" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Ko9-1k-cmU"/>
+                <constraint firstAttribute="bottom" secondItem="EYn-pw-v26" secondAttribute="bottom" id="tx9-D6-ayx"/>
+            </constraints>
+            <size key="customSize" width="481" height="108"/>
+            <connections>
+                <outlet property="mondayName" destination="cNr-kV-CSl" id="Qji-p6-Ibp"/>
+                <outlet property="mondaySet" destination="2co-TB-wXy" id="E74-4o-vQS"/>
+                <outlet property="mondayTimes" destination="mJH-h9-h5f" id="Xly-gM-PJw"/>
+                <outlet property="mondayWeight" destination="iMu-WY-xxG" id="Yws-fG-UdA"/>
+            </connections>
+            <point key="canvasLocation" x="407.97101449275368" y="79.6875"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
