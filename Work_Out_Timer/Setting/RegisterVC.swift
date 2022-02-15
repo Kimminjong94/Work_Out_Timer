@@ -16,6 +16,7 @@ class RegisterVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        dismissKeyboardWhenTappedAround()
 
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -26,9 +27,9 @@ class RegisterVC: UIViewController {
         super.viewWillDisappear(animated)
         self.tabBarController?.tabBar.isHidden = false
     }
+    
+    //MARK: - 회원가입 버튼 클릭 시 이벤트
     @IBAction func registerPressed(_ sender: Any) {
-
-        
         if let email = emailTextfield.text, let password = passwordTextfield.text{
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             if let e = error {

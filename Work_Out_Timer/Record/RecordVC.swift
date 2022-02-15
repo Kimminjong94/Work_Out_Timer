@@ -7,6 +7,7 @@
 import UIKit
 import Tabman
 import Pageboy
+import Firebase
 
 class RecordVC: TabmanViewController {
 
@@ -42,7 +43,7 @@ class RecordVC: TabmanViewController {
         addBar(bar, dataSource: self, at: .top)
         
         bar.backgroundView.style = .clear
-        bar.layout.contentInset = UIEdgeInsets(top: 50.0, left: 0.0, bottom: 0.0, right: 0.0)
+        bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
         bar.buttons.customize { (button) in
                     button.tintColor = .systemGray
                     button.selectedTintColor = .black
@@ -56,19 +57,39 @@ class RecordVC: TabmanViewController {
         bar.layout.contentMode = .fit
 //        bar.layout.interButtonSpacing = 30
         bar.backgroundColor = .white
-        
-
-        
+        configureItem()
         
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.navigationBar.isHidden = true
+    private func configureItem() {
+        navigationItem.title = "운동 기록"
     }
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.navigationBar.isHidden = false
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        navigationController?.navigationBar.isHidden = true
+//    }
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        navigationController?.navigationBar.isHidden = false
+//    }
+    
+    @IBAction func saveButtonPressed(_ sender: Any) {
+        
+        if let mondayName = cell.mondayName.text, let messageSender = Auth.auth().currentUser?.email {
+            db.collection("messages").addDocument(data: ["body": mondayName]) { (error) in
+                if let e = error {
+                    print("there is error with firestore, \(e)")
+                } else {
+                    print("success")
+                }
+            }
+        }
+        presentAlert(title: "저장 완료", isCancelActionIncluded: false, handler: { action in
+//            let splashStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//            let splashViewController = splashStoryboard.instantiateViewController(identifier: "BaseTabBarViewController")
+//            self.changeRootViewController(splashViewController)
+        })
     }
+    
 }
 
 extension RecordVC: PageboyViewControllerDataSource, TMBarDataSource {

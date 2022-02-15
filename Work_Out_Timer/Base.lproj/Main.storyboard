@@ -163,7 +163,13 @@
                         <viewLayoutGuide key="safeArea" id="EHD-Gk-wIF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="nj4-Nh-mGZ"/>
+                    <navigationItem key="navigationItem" id="nj4-Nh-mGZ">
+                        <barButtonItem key="rightBarButtonItem" title="저장" id="ah2-gl-hGj">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="A6d-Fm-vdf" id="Mt8-xh-hk1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="944-Dv-XG7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -186,6 +192,9 @@
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PvV-aT-yPC">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="761"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="761" id="f1S-e8-9za"/>
+                                                </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mhe-SJ-7Pj">
                                                     <size key="itemSize" width="128" height="128"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -198,7 +207,7 @@
                                                 <rect key="frame" x="10" y="766" width="394" height="50"/>
                                                 <color key="backgroundColor" systemColor="systemGray4Color"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="zVs-rQ-vnw"/>
+                                                    <constraint firstAttribute="height" constant="50" id="mHb-qQ-aB2"/>
                                                 </constraints>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
@@ -218,9 +227,8 @@
                                             <constraint firstAttribute="trailing" secondItem="rqY-Rz-LGF" secondAttribute="trailing" constant="10" id="QQw-4m-8Et"/>
                                             <constraint firstItem="PvV-aT-yPC" firstAttribute="leading" secondItem="euM-cT-OSa" secondAttribute="leading" id="R9t-MJ-5Ob"/>
                                             <constraint firstItem="PvV-aT-yPC" firstAttribute="top" secondItem="euM-cT-OSa" secondAttribute="top" id="Uuz-55-iIf"/>
-                                            <constraint firstItem="rqY-Rz-LGF" firstAttribute="top" secondItem="PvV-aT-yPC" secondAttribute="bottom" constant="5" id="mKQ-4g-z9u"/>
                                             <constraint firstAttribute="height" constant="896" id="sth-8N-LUM"/>
-                                            <constraint firstAttribute="bottom" secondItem="rqY-Rz-LGF" secondAttribute="bottom" constant="80" id="yuj-wb-rLi"/>
+                                            <constraint firstItem="rqY-Rz-LGF" firstAttribute="top" secondItem="PvV-aT-yPC" secondAttribute="bottom" constant="5" id="t2P-Ur-dSG"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -390,12 +398,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CL7-N0-Jls">
-                                <rect key="frame" x="20" y="88" width="374" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="로그인 하러가기"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUv-Dx-fY6">
                                 <rect key="frame" x="300" y="578" width="94" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -407,6 +409,15 @@
                                 <connections>
                                     <action selector="logoutPressed:" destination="QBY-Zx-OVt" eventType="touchUpInside" id="4dB-eq-k1Q"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8d-Ff-rg0">
+                                <rect key="frame" x="18" y="90" width="119" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="로그인 하러가기">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
+                                </buttonConfiguration>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Jxr-5z-DUR"/>
@@ -573,7 +584,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h8p-DA-Qkc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2730.434782608696" y="1494.6428571428571"/>
+            <point key="canvasLocation" x="2883" y="1495"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="d1u-sp-usA">
@@ -695,6 +706,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MzN-jT-1B2">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

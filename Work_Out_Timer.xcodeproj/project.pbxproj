@@ -25,6 +25,8 @@
 		585BA297279BFCBA00BB2886 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 585BA295279BFCBA00BB2886 /* LaunchScreen.storyboard */; };
 		5870EA8527AE46DC005B9E21 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5870EA8427AE46DC005B9E21 /* RegisterVC.swift */; };
 		5870EA8727AE46E6005B9E21 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5870EA8627AE46E6005B9E21 /* LoginVC.swift */; };
+		58A1880427BB4F5000CC0962 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A1880327BB4F5000CC0962 /* Extension.swift */; };
+		58A1880727BB4FE200CC0962 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A1880627BB4FE200CC0962 /* Indicator.swift */; };
 		58C2787F27A2A55300582CFC /* RecordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C2787E27A2A55300582CFC /* RecordVC.swift */; };
 		58C2788127A2A5C200582CFC /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C2788027A2A5C200582CFC /* SettingVC.swift */; };
 		58D5604A27AD0A2A009FA9B2 /* LaunchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D5604927AD0A2A009FA9B2 /* LaunchVC.swift */; };
@@ -54,6 +56,8 @@
 		585BA298279BFCBA00BB2886 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5870EA8427AE46DC005B9E21 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		5870EA8627AE46E6005B9E21 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		58A1880327BB4F5000CC0962 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		58A1880627BB4FE200CC0962 /* Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
 		58C2787E27A2A55300582CFC /* RecordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordVC.swift; sourceTree = "<group>"; };
 		58C2788027A2A5C200582CFC /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
 		58D5604927AD0A2A009FA9B2 /* LaunchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchVC.swift; sourceTree = "<group>"; };
@@ -128,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				5870EA8327AE46C5005B9E21 /* Launch */,
+				58A1880527BB4F5800CC0962 /* Base */,
 				585BA290279BFCB900BB2886 /* Main.storyboard */,
 				58C2788227A2A5D200582CFC /* Home */,
 				58C2788327A2A5D900582CFC /* Record */,
@@ -147,6 +152,16 @@
 			path = Launch;
 			sourceTree = "<group>";
 		};
+		58A1880527BB4F5800CC0962 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				58A1880327BB4F5000CC0962 /* Extension.swift */,
+				58A1880627BB4FE200CC0962 /* Indicator.swift */,
+				58D9E04E27B2290100BC1897 /* BaseTabBarController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		58C2787D27A2A51C00582CFC /* Others */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,7 +177,6 @@
 			isa = PBXGroup;
 			children = (
 				585BA28E279BFCB900BB2886 /* HomeVC.swift */,
-				58D9E04E27B2290100BC1897 /* BaseTabBarController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -329,6 +343,8 @@
 				584DC4AE27B4FACA007480F4 /* SundayVC.swift in Sources */,
 				584DC4A327B4FA51007480F4 /* TuesdayVC.swift in Sources */,
 				58C2788127A2A5C200582CFC /* SettingVC.swift in Sources */,
+				58A1880427BB4F5000CC0962 /* Extension.swift in Sources */,
+				58A1880727BB4FE200CC0962 /* Indicator.swift in Sources */,
 				585BA28B279BFCB900BB2886 /* AppDelegate.swift in Sources */,
 				584DC4A127B4FA38007480F4 /* MondayVC.swift in Sources */,
 				5870EA8527AE46DC005B9E21 /* RegisterVC.swift in Sources */,

@@ -32,11 +32,7 @@ class LoginVC: UIViewController {
                     navigation.modalPresentationStyle = .overFullScreen
                     self.present(navigation, animated: true, completion: nil)
                 }
-                
-                
         }
-        
-
         }
     }
     

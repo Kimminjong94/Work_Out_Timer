@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import Firebase
 
 class MondayVC: UIViewController {
     
     @IBOutlet weak var mondayCV: UICollectionView!
     @IBOutlet weak var plusButton: UIButton!
+    
+    let db = Firestore.firestore()
     
     var lineCount = 5
     
@@ -30,7 +33,6 @@ class MondayVC: UIViewController {
         self.lineCount += 1
         mondayCV.reloadData()
     }
-    
 }
 
 extension MondayVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -60,6 +62,8 @@ extension MondayVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
         } else {
             return CGSize(width: 100, height: 100)
         }
+            
+     
     }
     
     

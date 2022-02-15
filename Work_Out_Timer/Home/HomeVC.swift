@@ -31,7 +31,6 @@ class HomeVC: UIViewController {
     //MARK: - 타이머 시작 버튼
     @IBAction func startButtonTapped(_ sender: UIButton) {
         
-        DispatchQueue.main.async() {
             if self.isTimerRunning == false {
                 self.runTimer()
                 self.startStopLabel.text = "Pause"
@@ -40,7 +39,6 @@ class HomeVC: UIViewController {
                 self.myTimer.invalidate()
                 self.startStopLabel.text = "Start"
             }
-        }
 
         
     }
