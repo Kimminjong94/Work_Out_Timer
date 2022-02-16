@@ -14,8 +14,9 @@ class MondayVC: UIViewController {
     @IBOutlet weak var plusButton: UIButton!
     
     let db = Firestore.firestore()
+    var messages: [Messages] = []
     
-    var lineCount = 5
+    var lineCount = 2
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,10 +28,44 @@ class MondayVC: UIViewController {
         
         mondayCV.delegate = self
         mondayCV.dataSource = self
+        
+        loadMessages()
+    }
+    
+    func loadMessages() {
+        
+        db.collection("workoutName")
+            .order(by: "date")
+            .addSnapshotListener { querySnapshot, error in
+            
+            self.messages = []
+
+            if let e = error {
+                print("error with Firestore \(e)")
+            } else {
+                if let snapshotDocuments = querySnapshot?.documents {
+                    for doc in snapshotDocuments {
+                        let data = doc.data()
+                        if let messageSender = data["sender"] as? String, let messageBody = data["name"] as? String {
+                            let newMessage = Messages(sender: messageSender, body: messageBody)
+                            self.messages.append(newMessage)
+                            
+                            DispatchQueue.main.async() {
+                                self.mondayCV.reloadData()
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
     }
     
     @IBAction func plusButtonPressed(_ sender: Any) {
         self.lineCount += 1
+        let indexPath = IndexPath(row: self.messages.count - 1, section: 0)
+        self.mondayCV.scrollToItem(at: indexPath, at: .top, animated: true)
         mondayCV.reloadData()
     }
 }
@@ -38,9 +73,9 @@ class MondayVC: UIViewController {
 extension MondayVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.mondayCV {
-            return self.lineCount
+            return messages.count
         } else {
-            return 10
+            return 2
         }
         
     }
@@ -48,7 +83,23 @@ extension MondayVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.mondayCV {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MondayCell", for: indexPath) as? MondayCell else {return UICollectionViewCell()}
+            cell.mondayName.text = messages[indexPath.row].body
             
+//            if let mondayName = cell.mondayName.text, let mondayWeight = cell.mondayWeight.text, let mondaySet = cell.mondaySet.text, let mondayTimes = cell.mondayTimes.text, let messageSender = Auth.auth().currentUser?.email {
+//                db.collection("workoutName").addDocument(data: [
+//                    "sender": messageSender,
+//                    "name": mondayName,
+//                    "date": Date().timeIntervalSince1970
+////                    "weight": mondayWeight,
+////                    "set": mondaySet,
+////                    "times": mondayTimes
+//                ]) { (error) in
+//                    if let e = error {
+//                        print("there is error with firestore, \(e)")
+//                    } else {
+//                        print("success saving data")
+//                    }
+//                }}
             return cell
         } else {
             return UICollectionViewCell()

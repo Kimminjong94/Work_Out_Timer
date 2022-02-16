@@ -12,6 +12,9 @@ import Firebase
 class RecordVC: TabmanViewController {
 
     private var viewControllers: Array<UIViewController> = []
+    
+    let db = Firestore.firestore()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,23 +77,31 @@ class RecordVC: TabmanViewController {
     
     @IBAction func saveButtonPressed(_ sender: Any) {
         
-        if let mondayName = cell.mondayName.text, let messageSender = Auth.auth().currentUser?.email {
-            db.collection("messages").addDocument(data: ["body": mondayName]) { (error) in
+        if let mondayName = MondayCell().mondayName.text, let messageSender = Auth.auth().currentUser?.email {
+            db.collection("workoutName").addDocument(data: [
+                "sender": messageSender,
+                "name": mondayName,
+                "date": Date().timeIntervalSince1970
+//                    "weight": mondayWeight,
+//                    "set": mondaySet,
+//                    "times": mondayTimes
+            ]) { (error) in
                 if let e = error {
                     print("there is error with firestore, \(e)")
                 } else {
-                    print("success")
+                    print("success saving data")
                 }
-            }
-        }
+            }}
+        
+
+        
         presentAlert(title: "저장 완료", isCancelActionIncluded: false, handler: { action in
 //            let splashStoryboard = UIStoryboard(name: "Main", bundle: nil)
 //            let splashViewController = splashStoryboard.instantiateViewController(identifier: "BaseTabBarViewController")
 //            self.changeRootViewController(splashViewController)
         })
-    }
+    }}
     
-}
 
 extension RecordVC: PageboyViewControllerDataSource, TMBarDataSource {
     func barItem(for bar: TMBar, at index: Int) -> TMBarItemable {

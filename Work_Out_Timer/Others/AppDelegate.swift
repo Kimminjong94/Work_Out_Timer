@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import CLTypingLabel
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
