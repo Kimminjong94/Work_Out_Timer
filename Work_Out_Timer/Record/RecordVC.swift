@@ -61,37 +61,51 @@ class RecordVC: TabmanViewController {
 //        bar.layout.interButtonSpacing = 30
         bar.backgroundColor = .white
         configureItem()
+        setCustomTitle()
         
     }
     private func configureItem() {
         navigationItem.title = "운동 기록"
     }
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        navigationController?.navigationBar.isHidden = true
-//    }
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//        navigationController?.navigationBar.isHidden = false
-//    }
     
+    func setCustomTitle() {
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
+    
+    func goToLogin() {
+        if Auth.auth().currentUser?.email == nil {
+            guard let navigation = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "BaseTabBarViewController") as? BaseTabBarViewController else { return }
+            navigation.modalPresentationStyle = .overFullScreen
+            
+            self.present(navigation, animated: true)
+        }
+    }
+
     @IBAction func saveButtonPressed(_ sender: Any) {
         
-        if let mondayName = MondayCell().mondayName.text, let messageSender = Auth.auth().currentUser?.email {
-            db.collection("workoutName").addDocument(data: [
-                "sender": messageSender,
-                "name": mondayName,
-                "date": Date().timeIntervalSince1970
-//                    "weight": mondayWeight,
-//                    "set": mondaySet,
-//                    "times": mondayTimes
-            ]) { (error) in
-                if let e = error {
-                    print("there is error with firestore, \(e)")
-                } else {
-                    print("success saving data")
+        if Auth.auth().currentUser?.email != nil  {
+            if let mondayName = MondayCell().mondayName?.text, let messageSender = Auth.auth().currentUser?.email {
+                db.collection("workoutName").addDocument(data: [
+                    "sender": messageSender,
+                    "name": mondayName,
+                    "date": Date().timeIntervalSince1970
+    //                    "weight": mondayWeight,
+    //                    "set": mondaySet,
+    //                    "times": mondayTimes
+                ]) { (error) in
+                    if let e = error {
+                        print("there is error with firestore, \(e)")
+                    } else {
+                        print("success saving data")
+                    }
                 }
-            }}
+            }
+            } else if Auth.auth().currentUser?.email == nil {
+                guard let navigation = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "RegisterNavigationVC") as? RegisterNavigationVC else { return }
+                navigation.modalPresentationStyle = .overFullScreen
+                
+                self.navigationController?.pushViewController(navigation, animated: true)
+            }
         
 
         
@@ -100,7 +114,9 @@ class RecordVC: TabmanViewController {
 //            let splashViewController = splashStoryboard.instantiateViewController(identifier: "BaseTabBarViewController")
 //            self.changeRootViewController(splashViewController)
         })
-    }}
+    }
+    
+}
     
 
 extension RecordVC: PageboyViewControllerDataSource, TMBarDataSource {

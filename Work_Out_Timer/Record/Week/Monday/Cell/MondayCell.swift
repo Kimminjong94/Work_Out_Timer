@@ -12,6 +12,8 @@ class MondayCell: UICollectionViewCell {
     @IBOutlet weak var mondaySet: UITextField!
     @IBOutlet weak var mondayTimes: UITextField!
     
+//    var mondayWorkOutName = self.mondayName.text
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

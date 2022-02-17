@@ -10,10 +10,23 @@ import Firebase
 class LoginVC: UIViewController {
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loginButton.layer.cornerRadius = 12
+        
+        self.loginButton.isEnabled = false
+        self.passwordTF.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+
     }
+    
+    @objc func textFieldDidChange(_ sender: Any?) {
+        self.loginButton.isEnabled = true
+        self.loginButton.backgroundColor = UIColor.black
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true

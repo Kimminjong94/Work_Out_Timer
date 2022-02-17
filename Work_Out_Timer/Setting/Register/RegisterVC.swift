@@ -12,12 +12,22 @@ class RegisterVC: UIViewController {
     
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
+    @IBOutlet weak var registerButton: UIButton!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         dismissKeyboardWhenTappedAround()
+        registerButton.layer.cornerRadius = 12
+        
+        self.registerButton.isEnabled = false
+        self.passwordTextfield.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
 
+    }
+    
+    @objc func textFieldDidChange(_ sender: Any?) {
+        self.registerButton.isEnabled = true
+        self.registerButton.backgroundColor = UIColor.black
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

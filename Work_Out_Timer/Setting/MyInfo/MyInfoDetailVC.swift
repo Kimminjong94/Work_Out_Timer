@@ -1,26 +1,20 @@
 //
-//  SettingVC.swift
+//  MyInfoVC.swift
 //  Work_Out_Timer
 //
-//  Created by 김민종 on 2022/01/27.
+//  Created by 김민종 on 2022/02/17.
 //
 
 import UIKit
 import Firebase
 
-class SettingVC: UIViewController {
+class MyInfoDetailVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.isHidden = true
-    }
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.navigationController?.navigationBar.isHidden = false
-    }
+    
     @IBAction func logoutPressed(_ sender: Any) {
         do {
             try Auth.auth().signOut()
@@ -35,5 +29,4 @@ class SettingVC: UIViewController {
         navigation.modalPresentationStyle = .overFullScreen
         self.present(navigation, animated: true, completion: nil)
     }
-    
 }

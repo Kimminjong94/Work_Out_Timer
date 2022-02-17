@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5806794027AD11D500E03045 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5806793F27AD11D500E03045 /* GoogleService-Info.plist */; };
+		582EC88D27BE211700B3542A /* MyInfoDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582EC88C27BE211700B3542A /* MyInfoDetailVC.swift */; };
+		582EC88F27BE250F00B3542A /* VersionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582EC88E27BE250F00B3542A /* VersionVC.swift */; };
 		5835A63427B649B30044109C /* MondayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5835A63227B649B30044109C /* MondayCell.swift */; };
 		5835A63527B649B30044109C /* MondayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5835A63327B649B30044109C /* MondayCell.xib */; };
 		584DC4A127B4FA38007480F4 /* MondayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584DC4A027B4FA38007480F4 /* MondayVC.swift */; };
@@ -29,9 +31,11 @@
 		58A1880727BB4FE200CC0962 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A1880627BB4FE200CC0962 /* Indicator.swift */; };
 		58B8B32127BB6045005AF71C /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B8B32027BB6045005AF71C /* Messages.swift */; };
 		58C2787F27A2A55300582CFC /* RecordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C2787E27A2A55300582CFC /* RecordVC.swift */; };
-		58C2788127A2A5C200582CFC /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C2788027A2A5C200582CFC /* SettingVC.swift */; };
+		58C2788127A2A5C200582CFC /* MyInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C2788027A2A5C200582CFC /* MyInfoVC.swift */; };
 		58D69C9427BCA6CD00E29D69 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D69C9227BCA6CD00E29D69 /* LaunchViewController.swift */; };
 		58D69C9527BCA6CD00E29D69 /* LaunchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58D69C9327BCA6CD00E29D69 /* LaunchViewController.xib */; };
+		58D69C9727BCE16900E29D69 /* LoginNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D69C9627BCE16900E29D69 /* LoginNavigationVC.swift */; };
+		58D69C9A27BCE4D200E29D69 /* RegisterNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D69C9927BCE4D200E29D69 /* RegisterNavigationVC.swift */; };
 		58D9E04F27B2290100BC1897 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D9E04E27B2290100BC1897 /* BaseTabBarController.swift */; };
 		C950F3D0F0E6B6D53133D628 /* Pods_Work_Out_Timer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825BDA77ABF73A694FAC33F8 /* Pods_Work_Out_Timer.framework */; };
 /* End PBXBuildFile section */
@@ -39,6 +43,8 @@
 /* Begin PBXFileReference section */
 		1483E6A443DF25C1CA35424B /* Pods-Work_Out_Timer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Work_Out_Timer.release.xcconfig"; path = "Target Support Files/Pods-Work_Out_Timer/Pods-Work_Out_Timer.release.xcconfig"; sourceTree = "<group>"; };
 		5806793F27AD11D500E03045 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		582EC88C27BE211700B3542A /* MyInfoDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoDetailVC.swift; sourceTree = "<group>"; };
+		582EC88E27BE250F00B3542A /* VersionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionVC.swift; sourceTree = "<group>"; };
 		5835A63227B649B30044109C /* MondayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MondayCell.swift; sourceTree = "<group>"; };
 		5835A63327B649B30044109C /* MondayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MondayCell.xib; sourceTree = "<group>"; };
 		584DC4A027B4FA38007480F4 /* MondayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MondayVC.swift; sourceTree = "<group>"; };
@@ -62,9 +68,11 @@
 		58A1880627BB4FE200CC0962 /* Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
 		58B8B32027BB6045005AF71C /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		58C2787E27A2A55300582CFC /* RecordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordVC.swift; sourceTree = "<group>"; };
-		58C2788027A2A5C200582CFC /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
+		58C2788027A2A5C200582CFC /* MyInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoVC.swift; sourceTree = "<group>"; };
 		58D69C9227BCA6CD00E29D69 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		58D69C9327BCA6CD00E29D69 /* LaunchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchViewController.xib; sourceTree = "<group>"; };
+		58D69C9627BCE16900E29D69 /* LoginNavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigationVC.swift; sourceTree = "<group>"; };
+		58D69C9927BCE4D200E29D69 /* RegisterNavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNavigationVC.swift; sourceTree = "<group>"; };
 		58D9E04E27B2290100BC1897 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		825BDA77ABF73A694FAC33F8 /* Pods_Work_Out_Timer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Work_Out_Timer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B617A3BCFC4C7548F9D738DA /* Pods-Work_Out_Timer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Work_Out_Timer.debug.xcconfig"; path = "Target Support Files/Pods-Work_Out_Timer/Pods-Work_Out_Timer.debug.xcconfig"; sourceTree = "<group>"; };
@@ -82,6 +90,74 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		582EC89027BE29CD00B3542A /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				58D69C9927BCE4D200E29D69 /* RegisterNavigationVC.swift */,
+				5870EA8427AE46DC005B9E21 /* RegisterVC.swift */,
+				5870EA8627AE46E6005B9E21 /* LoginVC.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		582EC89127BE2CC300B3542A /* MyInfo */ = {
+			isa = PBXGroup;
+			children = (
+				58C2788027A2A5C200582CFC /* MyInfoVC.swift */,
+				582EC88C27BE211700B3542A /* MyInfoDetailVC.swift */,
+				582EC88E27BE250F00B3542A /* VersionVC.swift */,
+			);
+			path = MyInfo;
+			sourceTree = "<group>";
+		};
+		582EC89227BE425F00B3542A /* Tuesday */ = {
+			isa = PBXGroup;
+			children = (
+				584DC4A227B4FA51007480F4 /* TuesdayVC.swift */,
+			);
+			path = Tuesday;
+			sourceTree = "<group>";
+		};
+		582EC89327BE426800B3542A /* Wednesday */ = {
+			isa = PBXGroup;
+			children = (
+				584DC4A527B4FA88007480F4 /* WednesdayVC.swift */,
+			);
+			path = Wednesday;
+			sourceTree = "<group>";
+		};
+		582EC89427BE427400B3542A /* Thursday */ = {
+			isa = PBXGroup;
+			children = (
+				584DC4A727B4FA98007480F4 /* ThursdayVC.swift */,
+			);
+			path = Thursday;
+			sourceTree = "<group>";
+		};
+		582EC89527BE427A00B3542A /* Friday */ = {
+			isa = PBXGroup;
+			children = (
+				584DC4A927B4FAA5007480F4 /* FridayVC.swift */,
+			);
+			path = Friday;
+			sourceTree = "<group>";
+		};
+		582EC89627BE427F00B3542A /* Saturday */ = {
+			isa = PBXGroup;
+			children = (
+				584DC4AB27B4FABB007480F4 /* SaturdayVC.swift */,
+			);
+			path = Saturday;
+			sourceTree = "<group>";
+		};
+		582EC89727BE428700B3542A /* Sunday */ = {
+			isa = PBXGroup;
+			children = (
+				584DC4AD27B4FACA007480F4 /* SundayVC.swift */,
+			);
+			path = Sunday;
+			sourceTree = "<group>";
+		};
 		5835A63127B649950044109C /* Monday */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,12 +180,12 @@
 			isa = PBXGroup;
 			children = (
 				5835A63127B649950044109C /* Monday */,
-				584DC4A227B4FA51007480F4 /* TuesdayVC.swift */,
-				584DC4A527B4FA88007480F4 /* WednesdayVC.swift */,
-				584DC4A727B4FA98007480F4 /* ThursdayVC.swift */,
-				584DC4A927B4FAA5007480F4 /* FridayVC.swift */,
-				584DC4AB27B4FABB007480F4 /* SaturdayVC.swift */,
-				584DC4AD27B4FACA007480F4 /* SundayVC.swift */,
+				582EC89227BE425F00B3542A /* Tuesday */,
+				582EC89327BE426800B3542A /* Wednesday */,
+				582EC89427BE427400B3542A /* Thursday */,
+				582EC89527BE427A00B3542A /* Friday */,
+				582EC89627BE427F00B3542A /* Saturday */,
+				582EC89727BE428700B3542A /* Sunday */,
 				58B8B32027BB6045005AF71C /* Messages.swift */,
 			);
 			path = Week;
@@ -199,11 +275,19 @@
 		58C2788427A2A5DF00582CFC /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				58C2788027A2A5C200582CFC /* SettingVC.swift */,
-				5870EA8427AE46DC005B9E21 /* RegisterVC.swift */,
-				5870EA8627AE46E6005B9E21 /* LoginVC.swift */,
+				58D69C9827BCE17100E29D69 /* LoginNavigation */,
+				582EC89127BE2CC300B3542A /* MyInfo */,
+				582EC89027BE29CD00B3542A /* Register */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		58D69C9827BCE17100E29D69 /* LoginNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				58D69C9627BCE16900E29D69 /* LoginNavigationVC.swift */,
+			);
+			path = LoginNavigation;
 			sourceTree = "<group>";
 		};
 		A43F688E21321ECAE94D3DF9 /* Frameworks */ = {
@@ -349,16 +433,20 @@
 				584DC4AA27B4FAA5007480F4 /* FridayVC.swift in Sources */,
 				584DC4AE27B4FACA007480F4 /* SundayVC.swift in Sources */,
 				584DC4A327B4FA51007480F4 /* TuesdayVC.swift in Sources */,
-				58C2788127A2A5C200582CFC /* SettingVC.swift in Sources */,
+				58C2788127A2A5C200582CFC /* MyInfoVC.swift in Sources */,
+				582EC88F27BE250F00B3542A /* VersionVC.swift in Sources */,
+				58D69C9A27BCE4D200E29D69 /* RegisterNavigationVC.swift in Sources */,
 				58A1880427BB4F5000CC0962 /* Extension.swift in Sources */,
 				58A1880727BB4FE200CC0962 /* Indicator.swift in Sources */,
 				585BA28B279BFCB900BB2886 /* AppDelegate.swift in Sources */,
 				584DC4A127B4FA38007480F4 /* MondayVC.swift in Sources */,
 				5870EA8527AE46DC005B9E21 /* RegisterVC.swift in Sources */,
+				58D69C9727BCE16900E29D69 /* LoginNavigationVC.swift in Sources */,
 				5835A63427B649B30044109C /* MondayCell.swift in Sources */,
 				584DC4A627B4FA88007480F4 /* WednesdayVC.swift in Sources */,
 				584DC4AC27B4FABB007480F4 /* SaturdayVC.swift in Sources */,
 				58B8B32127BB6045005AF71C /* Messages.swift in Sources */,
+				582EC88D27BE211700B3542A /* MyInfoDetailVC.swift in Sources */,
 				585BA28D279BFCB900BB2886 /* SceneDelegate.swift in Sources */,
 				58D69C9427BCA6CD00E29D69 /* LaunchViewController.swift in Sources */,
 			);

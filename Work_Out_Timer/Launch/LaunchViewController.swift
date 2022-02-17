@@ -21,9 +21,6 @@ class LaunchViewController: UIViewController {
         super.viewWillAppear(animated)
         
         self.myTitle.text = "Workout Timer"
-
-
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -31,7 +28,6 @@ class LaunchViewController: UIViewController {
             
         guard let navigation = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "BaseTabBarViewController") as? BaseTabBarViewController else { return }
         navigation.modalPresentationStyle = .overFullScreen
-        
         self.present(navigation, animated: true)
     
 

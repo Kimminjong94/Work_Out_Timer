@@ -73,17 +73,17 @@ class MondayVC: UIViewController {
 extension MondayVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.mondayCV {
-            return messages.count
+            return lineCount
         } else {
             return 2
-        }
+            }
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.mondayCV {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MondayCell", for: indexPath) as? MondayCell else {return UICollectionViewCell()}
-            cell.mondayName.text = messages[indexPath.row].body
+//            cell.mondayName.text = messages[indexPath.row].body
             
 //            if let mondayName = cell.mondayName.text, let mondayWeight = cell.mondayWeight.text, let mondaySet = cell.mondaySet.text, let mondayTimes = cell.mondayTimes.text, let messageSender = Auth.auth().currentUser?.email {
 //                db.collection("workoutName").addDocument(data: [
