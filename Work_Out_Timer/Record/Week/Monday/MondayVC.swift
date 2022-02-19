@@ -73,7 +73,7 @@ extension MondayVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return messages.count
+            return lineCount
 
         default:
             return lineCount
