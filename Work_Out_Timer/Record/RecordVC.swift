@@ -83,29 +83,29 @@ class RecordVC: TabmanViewController {
 
     @IBAction func saveButtonPressed(_ sender: Any) {
         
-//        if Auth.auth().currentUser?.email != nil  {
-//            if let mondayName = MondayCell().mondayName?.text, let messageSender = Auth.auth().currentUser?.email {
-//                db.collection("workoutName").addDocument(data: [
-//                    "sender": messageSender,
-//                    "name": mondayName,
-//                    "date": Date().timeIntervalSince1970
-//    //                    "weight": mondayWeight,
-//    //                    "set": mondaySet,
-//    //                    "times": mondayTimes
-//                ]) { (error) in
-//                    if let e = error {
-//                        print("there is error with firestore, \(e)")
-//                    } else {
-//                        print("success saving data")
-//                    }
-//                }
-//            }
-//            } else if Auth.auth().currentUser?.email == nil {
-//                guard let navigation = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "RegisterNavigationVC") as? RegisterNavigationVC else { return }
-//                navigation.modalPresentationStyle = .overFullScreen
-//
-//                self.navigationController?.pushViewController(navigation, animated: true)
-//            }
+        if Auth.auth().currentUser?.email != nil  {
+            if let mondayName = MondayCell().mondayName?.text, let messageSender = Auth.auth().currentUser?.email {
+                db.collection("workoutName").addDocument(data: [
+                    "sender": messageSender,
+                    "name": mondayName,
+                    "date": Date().timeIntervalSince1970
+    //                    "weight": mondayWeight,
+    //                    "set": mondaySet,
+    //                    "times": mondayTimes
+                ]) { (error) in
+                    if let e = error {
+                        print("there is error with firestore, \(e)")
+                    } else {
+                        print("success saving data")
+                    }
+                }
+            }
+            } else if Auth.auth().currentUser?.email == nil {
+                guard let navigation = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "RegisterNavigationVC") as? RegisterNavigationVC else { return }
+                navigation.modalPresentationStyle = .overFullScreen
+
+                self.navigationController?.pushViewController(navigation, animated: true)
+            }
 
 
         

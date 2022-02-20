@@ -29,7 +29,6 @@ class MondayVC: UIViewController {
         mondayCV.delegate = self
         mondayCV.dataSource = self
         
-        loadMessages()
     }
     
     func loadMessages() {
@@ -53,6 +52,7 @@ class MondayVC: UIViewController {
                             DispatchQueue.main.async() {
                                 self.mondayCV.reloadData()
                             }
+                            
                         }
                     }
                 }
@@ -71,46 +71,57 @@ class MondayVC: UIViewController {
 
 extension MondayVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            return lineCount
-
-        default:
-            return lineCount
-        }
+//        switch section {
+//        case 0:
+//            return lineCount
+//        default:
+//            return lineCount
+//        }
         
 
-//        if collectionView == self.mondayCV {
-//            return messages.count
-//        } else {
-//            return 2
-//            }
+        if collectionView == self.mondayCV {
+            return lineCount
+        } else {
+            return 2
+            }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         if collectionView == self.mondayCV {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MondayCell", for: indexPath) as? MondayCell else {return UICollectionViewCell()}
-//            cell.mondayName.text = messages[indexPath.row].body
             
-            if let mondayName = cell.mondayName.text, let mondayWeight = cell.mondayWeight.text, let mondaySet = cell.mondaySet.text, let mondayTimes = cell.mondayTimes.text, let messageSender = Auth.auth().currentUser?.email {
-                db.collection("workoutName").addDocument(data: [
-                    "sender": messageSender,
-                    "name": mondayName,
-                    "date": Date().timeIntervalSince1970
-//                    "weight": mondayWeight,
-//                    "set": mondaySet,
-//                    "times": mondayTimes
-                ]) { (error) in
-                    if let e = error {
-                        print("there is error with firestore, \(e)")
-                    } else {
-                        print("success saving data")
-                    }
-                }}
+//            cell.mondayName.text = "hi"
+            
             return cell
-        } else {
-            return UICollectionViewCell()
+
+            
+//            loadMessages()
+        
+//            cell.mondayName.text = messages[indexPath.row].body
+//
+//            if let mondayName = cell.mondayName.text, let mondayWeight = cell.mondayWeight.text, let mondaySet = cell.mondaySet.text, let mondayTimes = cell.mondayTimes.text, let messageSender = Auth.auth().currentUser?.email {
+//                db.collection("workoutName").addDocument(data: [
+//                    "sender": messageSender,
+//                    "name": mondayName,
+//                    "date": Date().timeIntervalSince1970
+////                    "weight": mondayWeight,
+////                    "set": mondaySet,
+////                    "times": mondayTimes
+//                ]) { (error) in
+//                    if let e = error {
+//                        print("there is error with firestore, \(e)")
+//                    } else {
+//                        print("success saving data")
+//                    }
+//                }}
+//            return cell
+//        } else {
+//            return UICollectionViewCell()
+//        }
         }
+            return UICollectionViewCell()
+
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
