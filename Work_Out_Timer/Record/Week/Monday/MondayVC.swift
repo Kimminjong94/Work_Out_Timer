@@ -13,6 +13,8 @@ class MondayVC: UIViewController {
     @IBOutlet weak var mondayCV: UICollectionView!
     @IBOutlet weak var plusButton: UIButton!
     
+    @IBOutlet weak var testSaveButton: UIButton!
+    
     let db = Firestore.firestore()
     var messages: [Messages] = []
     
@@ -21,6 +23,8 @@ class MondayVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.plusButton.layer.cornerRadius = 12
+        
+        testSaveButton.layer.zPosition = 999
 
         
         let mondayCell = UINib(nibName: "MondayCell", bundle: nil)
@@ -67,6 +71,26 @@ class MondayVC: UIViewController {
         self.mondayCV.scrollToItem(at: indexPath, at: .top, animated: true)
         mondayCV.reloadData()
     }
+    @IBAction func testSave(_ sender: Any) {
+        
+        if let mondayName = MondayCell().mondayName?.text, let messageSender = Auth.auth().currentUser?.email {
+            db.collection("workoutName").addDocument(data: [
+                "sender": messageSender,
+                "name": mondayName,
+                "date": Date().timeIntervalSince1970
+//                    "weight": mondayWeight,
+//                    "set": mondaySet,
+//                    "times": mondayTimes
+            ]) { (error) in
+                if let e = error {
+                    print("there is error with firestore, \(e)")
+                } else {
+                    print("success saving data")
+                }
+            }
+        }
+        
+    }
 }
 
 extension MondayVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -77,8 +101,6 @@ extension MondayVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
 //        default:
 //            return lineCount
 //        }
-        
-
         if collectionView == self.mondayCV {
             return lineCount
         } else {
@@ -91,11 +113,9 @@ extension MondayVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
         if collectionView == self.mondayCV {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MondayCell", for: indexPath) as? MondayCell else {return UICollectionViewCell()}
             
-//            cell.mondayName.text = "hi"
-            
+            cell.mondayName.text = "hi"
             return cell
 
-            
 //            loadMessages()
         
 //            cell.mondayName.text = messages[indexPath.row].body

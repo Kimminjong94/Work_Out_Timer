@@ -190,10 +190,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PvV-aT-yPC">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="761"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="705"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="761" id="f1S-e8-9za"/>
+                                                    <constraint firstAttribute="height" constant="705" id="f1S-e8-9za"/>
                                                 </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mhe-SJ-7Pj">
                                                     <size key="itemSize" width="128" height="128"/>
@@ -219,16 +219,28 @@
                                                     <action selector="plusButtonPressed:" destination="ans-OQ-f25" eventType="touchUpInside" id="K9q-LJ-SqZ"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ew5-WU-IFc">
+                                                <rect key="frame" x="347" y="719" width="32" height="34"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="저장">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="testSave:" destination="ans-OQ-f25" eventType="touchUpInside" id="SBB-zM-eh3"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="rqY-Rz-LGF" firstAttribute="leading" secondItem="euM-cT-OSa" secondAttribute="leading" constant="10" id="1Jm-Cm-aBu"/>
                                             <constraint firstAttribute="trailing" secondItem="PvV-aT-yPC" secondAttribute="trailing" id="Ajw-SC-4dp"/>
+                                            <constraint firstItem="Ew5-WU-IFc" firstAttribute="top" secondItem="PvV-aT-yPC" secondAttribute="bottom" constant="14" id="Me1-Ip-Aqx"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ew5-WU-IFc" secondAttribute="trailing" constant="35" id="Nhh-je-kLO"/>
                                             <constraint firstAttribute="trailing" secondItem="rqY-Rz-LGF" secondAttribute="trailing" constant="10" id="QQw-4m-8Et"/>
                                             <constraint firstItem="PvV-aT-yPC" firstAttribute="leading" secondItem="euM-cT-OSa" secondAttribute="leading" id="R9t-MJ-5Ob"/>
                                             <constraint firstItem="PvV-aT-yPC" firstAttribute="top" secondItem="euM-cT-OSa" secondAttribute="top" id="Uuz-55-iIf"/>
                                             <constraint firstAttribute="height" constant="896" id="sth-8N-LUM"/>
-                                            <constraint firstItem="rqY-Rz-LGF" firstAttribute="top" secondItem="PvV-aT-yPC" secondAttribute="bottom" constant="5" id="t2P-Ur-dSG"/>
+                                            <constraint firstItem="rqY-Rz-LGF" firstAttribute="top" secondItem="PvV-aT-yPC" secondAttribute="bottom" constant="61" id="t2P-Ur-dSG"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -254,6 +266,7 @@
                     <connections>
                         <outlet property="mondayCV" destination="PvV-aT-yPC" id="g0R-9Z-TAJ"/>
                         <outlet property="plusButton" destination="rqY-Rz-LGF" id="W8A-mY-gAa"/>
+                        <outlet property="testSaveButton" destination="Ew5-WU-IFc" id="3P4-0L-AHM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IpX-VV-UvT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

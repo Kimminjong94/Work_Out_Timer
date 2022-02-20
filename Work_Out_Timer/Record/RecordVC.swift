@@ -83,7 +83,7 @@ class RecordVC: TabmanViewController {
 
     @IBAction func saveButtonPressed(_ sender: Any) {
         
-        if Auth.auth().currentUser?.email != nil  {
+//        if Auth.auth().currentUser?.email != nil  {
             if let mondayName = MondayCell().mondayName?.text, let messageSender = Auth.auth().currentUser?.email {
                 db.collection("workoutName").addDocument(data: [
                     "sender": messageSender,
@@ -100,12 +100,12 @@ class RecordVC: TabmanViewController {
                     }
                 }
             }
-            } else if Auth.auth().currentUser?.email == nil {
-                guard let navigation = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "RegisterNavigationVC") as? RegisterNavigationVC else { return }
-                navigation.modalPresentationStyle = .overFullScreen
-
-                self.navigationController?.pushViewController(navigation, animated: true)
-            }
+//            } else if Auth.auth().currentUser?.email == nil {
+//                guard let navigation = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "RegisterNavigationVC") as? RegisterNavigationVC else { return }
+//                navigation.modalPresentationStyle = .overFullScreen
+//
+//                self.navigationController?.pushViewController(navigation, animated: true)
+//            }
 
 
         
