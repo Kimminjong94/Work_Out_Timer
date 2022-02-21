@@ -24,7 +24,6 @@
                                 <rect key="frame" x="10" y="37" width="150" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="ZhW-p1-K1o"/>
-                                    <constraint firstAttribute="height" constant="34" id="nF2-CC-Klr"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -63,8 +62,8 @@
                             <constraint firstItem="mJH-h9-h5f" firstAttribute="centerY" secondItem="EYn-pw-v26" secondAttribute="centerY" id="YFN-bP-Ee4"/>
                             <constraint firstAttribute="bottom" secondItem="3Oq-eX-mCH" secondAttribute="bottom" id="hBL-Xl-vyp"/>
                             <constraint firstItem="mJH-h9-h5f" firstAttribute="leading" secondItem="2co-TB-wXy" secondAttribute="trailing" constant="10" id="lrR-xu-Uho"/>
-                            <constraint firstItem="mJH-h9-h5f" firstAttribute="centerY" secondItem="2co-TB-wXy" secondAttribute="centerY" id="uh0-iD-dKN"/>
                             <constraint firstAttribute="trailing" secondItem="mJH-h9-h5f" secondAttribute="trailing" constant="10" id="ww9-sB-OWJ"/>
+                            <constraint firstItem="2co-TB-wXy" firstAttribute="centerY" secondItem="mJH-h9-h5f" secondAttribute="centerY" id="z5H-tL-DEO"/>
                         </constraints>
                     </view>
                 </subviews>

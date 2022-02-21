@@ -15,6 +15,9 @@ class MondayVC: UIViewController {
     
     @IBOutlet weak var testSaveButton: UIButton!
     
+    
+    var ref: DocumentReference? = nil
+
     let db = Firestore.firestore()
     var messages: [Messages] = []
     
@@ -74,7 +77,7 @@ class MondayVC: UIViewController {
     @IBAction func testSave(_ sender: Any) {
         
         if let mondayName = MondayCell().mondayName?.text, let messageSender = Auth.auth().currentUser?.email {
-            db.collection("workoutName").addDocument(data: [
+            ref = db.collection("workoutName").addDocument(data: [
                 "sender": messageSender,
                 "name": mondayName,
                 "date": Date().timeIntervalSince1970
@@ -89,6 +92,11 @@ class MondayVC: UIViewController {
                 }
             }
         }
+        presentAlert(title: "저장 완료", isCancelActionIncluded: false, handler: { action in
+//            let splashStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//            let splashViewController = splashStoryboard.instantiateViewController(identifier: "BaseTabBarViewController")
+//            self.changeRootViewController(splashViewController)
+        })
         
     }
 }

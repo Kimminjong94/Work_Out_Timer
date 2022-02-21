@@ -27,6 +27,8 @@
 		585BA297279BFCBA00BB2886 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 585BA295279BFCBA00BB2886 /* LaunchScreen.storyboard */; };
 		5870EA8527AE46DC005B9E21 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5870EA8427AE46DC005B9E21 /* RegisterVC.swift */; };
 		5870EA8727AE46E6005B9E21 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5870EA8627AE46E6005B9E21 /* LoginVC.swift */; };
+		5877CE7227C35A5600BE048F /* TuesdayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5877CE7027C35A5600BE048F /* TuesdayCell.swift */; };
+		5877CE7327C35A5600BE048F /* TuesdayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5877CE7127C35A5600BE048F /* TuesdayCell.xib */; };
 		58A1880427BB4F5000CC0962 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A1880327BB4F5000CC0962 /* Extension.swift */; };
 		58A1880727BB4FE200CC0962 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A1880627BB4FE200CC0962 /* Indicator.swift */; };
 		58B8B32127BB6045005AF71C /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B8B32027BB6045005AF71C /* Messages.swift */; };
@@ -64,6 +66,8 @@
 		585BA298279BFCBA00BB2886 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5870EA8427AE46DC005B9E21 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		5870EA8627AE46E6005B9E21 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		5877CE7027C35A5600BE048F /* TuesdayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuesdayCell.swift; sourceTree = "<group>"; };
+		5877CE7127C35A5600BE048F /* TuesdayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TuesdayCell.xib; sourceTree = "<group>"; };
 		58A1880327BB4F5000CC0962 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		58A1880627BB4FE200CC0962 /* Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
 		58B8B32027BB6045005AF71C /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 		582EC89227BE425F00B3542A /* Tuesday */ = {
 			isa = PBXGroup;
 			children = (
+				5877CE7427C35A5E00BE048F /* Cell */,
 				584DC4A227B4FA51007480F4 /* TuesdayVC.swift */,
 			);
 			path = Tuesday;
@@ -232,6 +237,15 @@
 				58D69C9327BCA6CD00E29D69 /* LaunchViewController.xib */,
 			);
 			path = Launch;
+			sourceTree = "<group>";
+		};
+		5877CE7427C35A5E00BE048F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5877CE7027C35A5600BE048F /* TuesdayCell.swift */,
+				5877CE7127C35A5600BE048F /* TuesdayCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		58A1880527BB4F5800CC0962 /* Base */ = {
@@ -369,6 +383,7 @@
 			files = (
 				5835A63527B649B30044109C /* MondayCell.xib in Resources */,
 				585BA297279BFCBA00BB2886 /* LaunchScreen.storyboard in Resources */,
+				5877CE7327C35A5600BE048F /* TuesdayCell.xib in Resources */,
 				5806794027AD11D500E03045 /* GoogleService-Info.plist in Resources */,
 				58D69C9527BCA6CD00E29D69 /* LaunchViewController.xib in Resources */,
 				585BA294279BFCBA00BB2886 /* Assets.xcassets in Resources */,
@@ -442,6 +457,7 @@
 				584DC4A127B4FA38007480F4 /* MondayVC.swift in Sources */,
 				5870EA8527AE46DC005B9E21 /* RegisterVC.swift in Sources */,
 				58D69C9727BCE16900E29D69 /* LoginNavigationVC.swift in Sources */,
+				5877CE7227C35A5600BE048F /* TuesdayCell.swift in Sources */,
 				5835A63427B649B30044109C /* MondayCell.swift in Sources */,
 				584DC4A627B4FA88007480F4 /* WednesdayVC.swift in Sources */,
 				584DC4AC27B4FABB007480F4 /* SaturdayVC.swift in Sources */,

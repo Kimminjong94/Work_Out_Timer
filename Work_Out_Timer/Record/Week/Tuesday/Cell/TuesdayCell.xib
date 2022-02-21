@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TuesdayCell" id="gTV-IL-0wX" customClass="TuesdayCell" customModule="Work_Out_Timer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="462" height="96"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="462" height="96"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nmm-Ya-9a2">
+                        <rect key="frame" x="0.0" y="0.0" width="462" height="96"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="운동이름" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="83C-pd-3o4">
+                                <rect key="frame" x="10" y="31" width="150" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="oZb-nU-doe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="무게" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LaG-zl-uDT">
+                                <rect key="frame" x="170" y="31" width="52.5" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="반복횟수" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A5n-2s-qgS">
+                                <rect key="frame" x="375.5" y="31" width="76.5" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="세트수" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TYU-3e-i8J">
+                                <rect key="frame" x="301" y="31" width="64.5" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LaG-zl-uDT" firstAttribute="centerY" secondItem="83C-pd-3o4" secondAttribute="centerY" id="B5L-hG-1Me"/>
+                            <constraint firstItem="83C-pd-3o4" firstAttribute="centerY" secondItem="Nmm-Ya-9a2" secondAttribute="centerY" id="Bru-6F-P0Q"/>
+                            <constraint firstItem="A5n-2s-qgS" firstAttribute="centerY" secondItem="Nmm-Ya-9a2" secondAttribute="centerY" id="Mpt-LB-9pw"/>
+                            <constraint firstItem="83C-pd-3o4" firstAttribute="leading" secondItem="Nmm-Ya-9a2" secondAttribute="leading" constant="10" id="Oim-g9-mOE"/>
+                            <constraint firstItem="LaG-zl-uDT" firstAttribute="leading" secondItem="83C-pd-3o4" secondAttribute="trailing" constant="10" id="QUK-cK-hT4"/>
+                            <constraint firstAttribute="trailing" secondItem="A5n-2s-qgS" secondAttribute="trailing" constant="10" id="Tbw-y7-PU6"/>
+                            <constraint firstItem="TYU-3e-i8J" firstAttribute="centerY" secondItem="A5n-2s-qgS" secondAttribute="centerY" id="Wms-ua-x42"/>
+                            <constraint firstItem="A5n-2s-qgS" firstAttribute="leading" secondItem="TYU-3e-i8J" secondAttribute="trailing" constant="10" id="fPm-RS-r7B"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Nmm-Ya-9a2" secondAttribute="trailing" id="BlZ-aF-XGw"/>
+                <constraint firstAttribute="bottom" secondItem="Nmm-Ya-9a2" secondAttribute="bottom" id="Mwl-qn-9G6"/>
+                <constraint firstItem="Nmm-Ya-9a2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="NAF-V0-alF"/>
+                <constraint firstItem="Nmm-Ya-9a2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ybT-2s-utN"/>
+            </constraints>
+            <size key="customSize" width="462" height="96"/>
+            <connections>
+                <outlet property="tuesdayName" destination="83C-pd-3o4" id="y6e-uP-Rky"/>
+                <outlet property="tuesdaySet" destination="TYU-3e-i8J" id="8Q5-s7-VHr"/>
+                <outlet property="tuesdayTimes" destination="A5n-2s-qgS" id="Vnx-mU-ySP"/>
+                <outlet property="tuesdayWeight" destination="LaG-zl-uDT" id="wSx-9l-iYH"/>
+            </connections>
+            <point key="canvasLocation" x="428.98550724637687" y="93.080357142857139"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
