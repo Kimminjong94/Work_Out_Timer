@@ -8,6 +8,13 @@
 import UIKit
 
 class TuesdayCell: UICollectionViewCell {
+    
+    var delegate : ViewControllerDelegate?
+    
+    var currentIdx: Int = 0
+
+
+    
     @IBOutlet weak var tuesdayName: UITextField!
     @IBOutlet weak var tuesdayWeight: UITextField!
     @IBOutlet weak var tuesdaySet: UITextField!
@@ -15,7 +22,14 @@ class TuesdayCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        tuesdayName.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+    }
+    
+    
+    /* 텍스트필드의 값이 변경될 때 */
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        delegate?.sendData(data: textField, idx: currentIdx)
     }
 
 }
