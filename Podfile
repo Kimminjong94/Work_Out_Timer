@@ -11,6 +11,7 @@ pod 'CLTypingLabel'
 pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
 pod 'Tabman', '~> 2.11'
+pod 'SRCountdownTimer'
 
 
 

@@ -104,6 +104,13 @@
                                                     <action selector="resetButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f3f-5m-flN"/>
                                                 </connections>
                                             </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U4L-us-p4d" customClass="SRCountdownTimer" customModule="SRCountdownTimer">
+                                                <rect key="frame" x="50" y="474" width="314" height="200"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="A8k-OX-kI5"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -113,12 +120,15 @@
                                             <constraint firstItem="vdr-zo-Zdw" firstAttribute="centerX" secondItem="bnG-63-T19" secondAttribute="centerX" id="GeM-Fo-Wok"/>
                                             <constraint firstItem="jas-cB-8kH" firstAttribute="centerX" secondItem="bnG-63-T19" secondAttribute="centerX" id="JCo-u6-HEe"/>
                                             <constraint firstItem="kOp-E9-WmT" firstAttribute="centerY" secondItem="jas-cB-8kH" secondAttribute="centerY" id="L8q-gG-Nbc"/>
+                                            <constraint firstAttribute="trailing" secondItem="U4L-us-p4d" secondAttribute="trailing" constant="50" id="NF4-Om-DCG"/>
                                             <constraint firstAttribute="height" constant="717" id="Pmu-9e-rq7"/>
                                             <constraint firstItem="jas-cB-8kH" firstAttribute="leading" secondItem="bnG-63-T19" secondAttribute="leading" constant="20" id="YgH-GS-cuw"/>
                                             <constraint firstAttribute="trailing" secondItem="7OJ-nZ-WlR" secondAttribute="trailing" constant="20" id="iMh-5d-ghf"/>
                                             <constraint firstItem="jas-cB-8kH" firstAttribute="top" secondItem="vdr-zo-Zdw" secondAttribute="bottom" constant="50" id="jo7-Ra-tEs"/>
                                             <constraint firstAttribute="trailing" secondItem="jas-cB-8kH" secondAttribute="trailing" constant="20" id="nWA-b3-nFs"/>
+                                            <constraint firstItem="U4L-us-p4d" firstAttribute="top" secondItem="jas-cB-8kH" secondAttribute="bottom" constant="49" id="r12-Vs-wwQ"/>
                                             <constraint firstItem="xzn-Tu-Nzb" firstAttribute="top" secondItem="bnG-63-T19" secondAttribute="top" constant="100" id="rHe-Hw-mQp"/>
+                                            <constraint firstItem="U4L-us-p4d" firstAttribute="leading" secondItem="bnG-63-T19" secondAttribute="leading" constant="50" id="wTw-Bx-duG"/>
                                             <constraint firstItem="kOp-E9-WmT" firstAttribute="centerX" secondItem="jas-cB-8kH" secondAttribute="centerX" id="x6O-6L-xYL"/>
                                         </constraints>
                                     </view>
@@ -147,6 +157,7 @@
                         <outlet property="resetButton" destination="7OJ-nZ-WlR" id="WpL-d2-m6l"/>
                         <outlet property="startButton" destination="jas-cB-8kH" id="03f-N7-9IE"/>
                         <outlet property="startStopLabel" destination="kOp-E9-WmT" id="7nw-qu-Rj3"/>
+                        <outlet property="testCountdown" destination="U4L-us-p4d" id="USc-T7-rDK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

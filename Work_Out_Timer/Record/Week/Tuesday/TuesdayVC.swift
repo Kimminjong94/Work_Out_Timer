@@ -19,7 +19,7 @@ extension TuesdayVC: ViewControllerDelegate {
 }
 
 class TuesdayVC: UIViewController {
-    var currentData: [String] = []
+    var currentData: [Messages] = []
     
     
     @IBOutlet weak var tuesdayCV: UICollectionView!
@@ -31,8 +31,6 @@ class TuesdayVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
-        
         let mondayCell = UINib(nibName: "TuesdayCell", bundle: nil)
         tuesdayCV.register(mondayCell, forCellWithReuseIdentifier: "TuesdayCell")
         
@@ -40,12 +38,47 @@ class TuesdayVC: UIViewController {
         tuesdayCV.dataSource = self
         
         setData()
+        loadMessages()
 
     }
     func setData(){
-        currentData = ["",""]
+        currentData = ["","",""]
         tuesdayCV.reloadData()
     }
+    //MARK: - Firebase에서 데이터 불러오기
+    func loadMessages() {
+        
+        db.collection("workoutName")
+            .order(by: "date")
+            .getDocuments { (querySnapshot, error) in
+            
+            self.currentData = []
+
+            if let e = error {
+                print("error with Firestore \(e)")
+            } else {
+                
+                
+                if let snapshotDocuments = querySnapshot?.documents {
+                    for doc in snapshotDocuments {
+                        let data = doc.data()
+                        if let messageSender = data["sender"] as? String, let messageBody = data["name"] as? String {
+                            let newMessage = Messages(sender: messageSender, body: messageBody)
+                            
+                            self.currentData.append(newMessage)
+                            
+                            DispatchQueue.main.async() {
+                                self.tuesdayCV.reloadData()
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+    
     @IBAction func plusButtonPressed(_ sender: Any) {
         
     }
@@ -53,8 +86,6 @@ class TuesdayVC: UIViewController {
     
     
     @IBAction func saveButtonPressed(_ sender: Any) {
-        
-            
         
 //        print(TuesdayCell().tuesdayName?.text)
         print("\(currentData)")
@@ -83,13 +114,19 @@ class TuesdayVC: UIViewController {
 
 extension TuesdayVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-
-        if collectionView == self.tuesdayCV {
-            return 2
-        } else {
-            return 2
-            
-            }
+        
+        //        if collectionView == self.tuesdayCV {
+        //            return 2
+        //        } else {
+        //            return 2
+        //
+        //            }
+        switch section {
+        case 0:
+            return currentData.count
+        default:
+            return 4
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -97,9 +134,7 @@ extension TuesdayVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
         if collectionView == self.tuesdayCV {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TuesdayCell", for: indexPath) as? TuesdayCell else {return UICollectionViewCell()}
             
-//            cell.tuesdayName.text = "hi"
             cell.currentIdx = indexPath.row
-
             cell.delegate = self
             return cell
         }

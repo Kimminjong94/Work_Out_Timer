@@ -1,4 +1,5 @@
 import UIKit
+import SRCountdownTimer
 
 class HomeVC: UIViewController {
     @IBOutlet weak var countLabel: UILabel!
@@ -7,16 +8,25 @@ class HomeVC: UIViewController {
     
     @IBOutlet weak var resetButton: UIButton!
     
+    @IBOutlet weak var testCountdown: SRCountdownTimer!
+    
     var myTimer = Timer()
     var count = 0
     var isTimerRunning = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        testCountdown.start(beginingValue: 3)
+
+        
         self.startButton.layer.cornerRadius = 12
         self.startStopLabel.layer.zPosition = 999
         self.startButton.layer.zPosition = 0
         self.startButton.isEnabled = false
+    }
+    
+    public func start(beginingValue: Int, interval: TimeInterval = 1) {
     }
     
     override func viewWillAppear(_ animated: Bool) {
