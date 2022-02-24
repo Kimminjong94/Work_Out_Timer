@@ -14,7 +14,7 @@ protocol ViewControllerDelegate {
 
 extension TuesdayVC: ViewControllerDelegate {
     func sendData(data: UITextField!, idx: Int) {
-        currentData[idx] = data.text ?? ""
+//        currentData[idx] = data.text ?? ""
     }
 }
 
@@ -131,7 +131,7 @@ extension TuesdayVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
         //            }
         switch section {
         case 0:
-            return lineCountf
+            return lineCount
         default:
             return 4
         }
