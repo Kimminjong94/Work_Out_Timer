@@ -42,6 +42,8 @@ class TuesdayVC: UIViewController {
         
         setData()
         loadMessages()
+        self.tuesdayCV.reloadData()
+
 
     }
     func setData(){
@@ -73,7 +75,7 @@ class TuesdayVC: UIViewController {
                                 self.tuesdayCV.reloadData()
                             }
                             
-                            // 배열에 데이터 추가하기 해보기
+                            // 배열에 데이터 추가하기 해보기 깃 에러 처리
                             self.currentData = [newMessage.body]
 
                         }
