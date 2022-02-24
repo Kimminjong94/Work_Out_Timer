@@ -19,7 +19,10 @@ extension TuesdayVC: ViewControllerDelegate {
 }
 
 class TuesdayVC: UIViewController {
-    var currentData: [Messages] = []
+    var currentData: [String] = []
+    
+    var lineCount = 2
+
     
     
     @IBOutlet weak var tuesdayCV: UICollectionView!
@@ -65,12 +68,12 @@ class TuesdayVC: UIViewController {
                         if let messageSender = data["sender"] as? String, let messageBody = data["name"] as? String {
                             let newMessage = Messages(sender: messageSender, body: messageBody)
                             
-                            self.currentData.append(newMessage)
                             
                             DispatchQueue.main.async() {
                                 self.tuesdayCV.reloadData()
                             }
-                            
+                            self.currentData = [newMessage.body]
+
                         }
                     }
                 }
@@ -80,6 +83,11 @@ class TuesdayVC: UIViewController {
     }
     
     @IBAction func plusButtonPressed(_ sender: Any) {
+        
+        self.lineCount += 1
+        let indexPath = IndexPath(row: self.currentData.count - 1, section: 0)
+        self.tuesdayCV.scrollToItem(at: indexPath, at: .top, animated: true)
+        tuesdayCV.reloadData()
         
     }
     
@@ -123,7 +131,7 @@ extension TuesdayVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
         //            }
         switch section {
         case 0:
-            return currentData.count
+            return lineCountf
         default:
             return 4
         }

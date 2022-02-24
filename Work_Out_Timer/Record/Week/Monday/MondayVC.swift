@@ -53,7 +53,7 @@ class MondayVC: UIViewController {
                     for doc in snapshotDocuments {
                         let data = doc.data()
                         if let messageSender = data["sender"] as? String, let messageBody = data["name"] as? String {
-                            let newMessage = Messages(sender: messageSender, body: [messageBody])
+                            let newMessage = Messages(sender: messageSender, body: messageBody)
                             self.messages.append(newMessage)
                             
                             DispatchQueue.main.async() {
