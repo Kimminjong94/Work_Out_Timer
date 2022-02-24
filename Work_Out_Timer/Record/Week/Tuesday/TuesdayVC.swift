@@ -72,6 +72,8 @@ class TuesdayVC: UIViewController {
                             DispatchQueue.main.async() {
                                 self.tuesdayCV.reloadData()
                             }
+                            
+                            // 배열에 데이터 추가하기 해보기
                             self.currentData = [newMessage.body]
 
                         }
@@ -123,12 +125,6 @@ class TuesdayVC: UIViewController {
 extension TuesdayVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        //        if collectionView == self.tuesdayCV {
-        //            return 2
-        //        } else {
-        //            return 2
-        //
-        //            }
         switch section {
         case 0:
             return lineCount
