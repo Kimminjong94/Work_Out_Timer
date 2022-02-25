@@ -2,8 +2,7 @@
 //  TuesdayVC.swift
 //  Work_Out_Timer
 //
-//  Created by 김민종 on 2022/02/10.
-//
+//  Created by 김민종 on 2022/02/10
 
 import UIKit
 import Firebase
@@ -14,20 +13,20 @@ protocol ViewControllerDelegate {
 
 extension TuesdayVC: ViewControllerDelegate {
     func sendData(data: UITextField!, idx: Int) {
-//        currentData[idx] = data.text ?? ""
+        currentData[idx] = data.text ?? ""
     }
+
 }
 
-class TuesdayVC: UIViewController {
-    var currentData: [String] = []
-    
-    var lineCount = 2
 
-    
+
+class TuesdayVC: UIViewController {
     
     @IBOutlet weak var tuesdayCV: UICollectionView!
     
     let db = Firestore.firestore()
+    var currentData: [String] = []
+    var lineCount = 2
     
 //    var name: String = TuesdayCell().tuesdayName.text!
         
@@ -47,7 +46,7 @@ class TuesdayVC: UIViewController {
 
     }
     func setData(){
-        currentData = ["","",""]
+        currentData = []
         tuesdayCV.reloadData()
     }
     //MARK: - Firebase에서 데이터 불러오기
@@ -69,14 +68,15 @@ class TuesdayVC: UIViewController {
                         let data = doc.data()
                         if let messageSender = data["sender"] as? String, let messageBody = data["name"] as? String {
                             let newMessage = Messages(sender: messageSender, body: messageBody)
-                            
+//                            self.currentData = [messageBody]
+//                            self.currentData = [newMessage.body]
+
                             
                             DispatchQueue.main.async() {
                                 self.tuesdayCV.reloadData()
                             }
                             
                             // 배열에 데이터 추가하기 해보기 깃 에러 처리
-                            self.currentData = [newMessage.body]
 
                         }
                     }
