@@ -62,22 +62,17 @@ class TuesdayVC: UIViewController {
                 print("error with Firestore \(e)")
             } else {
                 
-                
                 if let snapshotDocuments = querySnapshot?.documents {
                     for doc in snapshotDocuments {
                         let data = doc.data()
                         if let messageSender = data["sender"] as? String, let messageBody = data["name"] as? String {
                             let newMessage = Messages(sender: messageSender, body: messageBody)
-//                            self.currentData = [messageBody]
-//                            self.currentData = [newMessage.body]
-
-                            
+                            self.currentData = [messageBody]
+                            self.currentData = [newMessage.body]
                             DispatchQueue.main.async() {
                                 self.tuesdayCV.reloadData()
                             }
-                            
                             // 배열에 데이터 추가하기 해보기 깃 에러 처리
-
                         }
                     }
                 }
