@@ -7,16 +7,16 @@
 import UIKit
 import Firebase
 
-protocol ViewControllerDelegate {
-    func sendData(data: UITextField!, idx: Int)
-}
+//protocol ViewControllerDelegate {
+//    func sendData(data: UITextField!, idx: Int)
+//}
+//
+//extension TuesdayVC: ViewControllerDelegate {
+//    func sendData(data: UITextField!, idx: Int) {
+//        currentData[idx] = data.text ?? ""
+//    }
 
-extension TuesdayVC: ViewControllerDelegate {
-    func sendData(data: UITextField!, idx: Int) {
-        currentData[idx] = data.text ?? ""
-    }
-
-}
+//
 
 
 
@@ -25,7 +25,7 @@ class TuesdayVC: UIViewController {
     @IBOutlet weak var tuesdayCV: UICollectionView!
     
     let db = Firestore.firestore()
-    var currentData: [String] = []
+    var currentData: [Messages] = []
     var lineCount = 2
     
 //    var name: String = TuesdayCell().tuesdayName.text!
@@ -33,8 +33,8 @@ class TuesdayVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let mondayCell = UINib(nibName: "TuesdayCell", bundle: nil)
-        tuesdayCV.register(mondayCell, forCellWithReuseIdentifier: "TuesdayCell")
+        let tuesdayCell = UINib(nibName: "TuesdayCell", bundle: nil)
+        tuesdayCV.register(tuesdayCell, forCellWithReuseIdentifier: "TuesdayCell")
         
         tuesdayCV.delegate = self
         tuesdayCV.dataSource = self
@@ -67,8 +67,8 @@ class TuesdayVC: UIViewController {
                         let data = doc.data()
                         if let messageSender = data["sender"] as? String, let messageBody = data["name"] as? String {
                             let newMessage = Messages(sender: messageSender, body: messageBody)
-                            self.currentData = [messageBody]
-                            self.currentData = [newMessage.body]
+//                            self.currentData = [messageBody]
+//                            self.currentData = [newMessage.body]
                             DispatchQueue.main.async() {
                                 self.tuesdayCV.reloadData()
                             }
@@ -124,7 +124,7 @@ extension TuesdayVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
         
         switch section {
         case 0:
-            return lineCount
+            return 2
         default:
             return 4
         }
@@ -134,9 +134,9 @@ extension TuesdayVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
         
         if collectionView == self.tuesdayCV {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TuesdayCell", for: indexPath) as? TuesdayCell else {return UICollectionViewCell()}
-            
-            cell.currentIdx = indexPath.row
-            cell.delegate = self
+            	//            cell.currentIdx = indexPath.row
+//            cell.delegate = self
+            cell.tuesdayName?.text = currentData[indexPath.row].body
             return cell
         }
             return UICollectionViewCell()

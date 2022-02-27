@@ -14,8 +14,7 @@ class RecordVC: TabmanViewController {
     private var viewControllers: Array<UIViewController> = []
     
     let db = Firestore.firestore()
-
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

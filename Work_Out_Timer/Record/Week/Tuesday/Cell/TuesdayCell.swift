@@ -9,9 +9,9 @@ import UIKit
 
 class TuesdayCell: UICollectionViewCell {
     
-    var delegate : ViewControllerDelegate?
+//    var delegate : ViewControllerDelegate?
     
-    var currentIdx: Int = 0
+//    var currentIdx: Int = 0
 
 
     
@@ -23,13 +23,13 @@ class TuesdayCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        tuesdayName.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+//        tuesdayName.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
     }
     
     
-    /* 텍스트필드의 값이 변경될 때 */
-    @objc func textFieldDidChange(_ textField: UITextField) {
-        delegate?.sendData(data: textField, idx: currentIdx)
-    }
+//    /* 텍스트필드의 값이 변경될 때 */
+//    @objc func textFieldDidChange(_ textField: UITextField) {
+//        delegate?.sendData(data: textField, idx: currentIdx)
+//    }
 
 }
