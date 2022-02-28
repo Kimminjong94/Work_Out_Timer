@@ -393,6 +393,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tuesdayCV" destination="buv-zW-1AT" id="PBA-3S-Gor"/>
+                        <outlet property="tuesdayName" destination="kWg-HW-EQN" id="rzK-cS-6fi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VX6-gL-jim" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -23,6 +23,7 @@ import Firebase
 class TuesdayVC: UIViewController {
     
     @IBOutlet weak var tuesdayCV: UICollectionView!
+    @IBOutlet weak var tuesdayName: UITextField!
     
     let db = Firestore.firestore()
     var currentData: [Messages] = []
@@ -39,29 +40,38 @@ class TuesdayVC: UIViewController {
         tuesdayCV.delegate = self
         tuesdayCV.dataSource = self
         
-        setData()
+//        setData()
         loadMessages()
         self.tuesdayCV.reloadData()
+        
+        
+        tuesdayCV.allowsMultipleSelectionDuringEditing = true
 
 
     }
-    func setData(){
-        currentData = []
-        tuesdayCV.reloadData()
+    
+    
+    override func collectionView(_ collectionView: UICollectionView, canEditItemAt indexPath: IndexPath) -> Bool {
+        return true
     }
+    
+    
+//    func setData(){
+//        currentData = []
+//        tuesdayCV.reloadData()
+//    }
     //MARK: - Firebase에서 데이터 불러오기
     func loadMessages() {
         
-        db.collection("workoutName")
+        db.collection("Tuesday")
             .order(by: "date")
-            .getDocuments { (querySnapshot, error) in
+            .addSnapshotListener { (querySnapshot, error) in
             
             self.currentData = []
 
             if let e = error {
                 print("error with Firestore \(e)")
             } else {
-                
                 if let snapshotDocuments = querySnapshot?.documents {
                     for doc in snapshotDocuments {
                         let data = doc.data()
@@ -70,9 +80,11 @@ class TuesdayVC: UIViewController {
 //                            self.currentData = [messageBody]
 //                            self.currentData = [newMessage.body]
                             DispatchQueue.main.async() {
+                                self.currentData.append(newMessage)
                                 self.tuesdayCV.reloadData()
+                                let indexPath = IndexPath(row: self.currentData.count - 1, section: 0)
+                                self.tuesdayCV.scrollToItem(at: indexPath, at: .top, animated: true)
                             }
-                            // 배열에 데이터 추가하기 해보기 깃 에러 처리
                         }
                     }
                 }
@@ -95,14 +107,11 @@ class TuesdayVC: UIViewController {
     @IBAction func saveButtonPressed(_ sender: Any) {
         
 //        print(TuesdayCell().tuesdayName?.text)
-        print("\(currentData)")
-        
-        //배열로 저장
-        
-        if let messageSender = Auth.auth().currentUser?.email {
-            db.collection("workoutName").addDocument(data: [
+//        print("\(currentData)")
+        if let messageSender = Auth.auth().currentUser?.email, let messageeBody = tuesdayName?.text {
+            db.collection("Tuesday").addDocument(data: [
                 "sender": messageSender,
-                "name": currentData,
+                "name": messageeBody ?? "",
                 "date": Date().timeIntervalSince1970
 //                    "weight": mondayWeight,
 //                    "set": mondaySet,
@@ -112,6 +121,10 @@ class TuesdayVC: UIViewController {
                     print("there is error with firestore, \(e)")
                 } else {
                     print("success saving data")
+                    
+                    DispatchQueue.main.async {
+                        self.tuesdayName.text = ""
+                    }
                 }
             }
         }
@@ -124,9 +137,9 @@ extension TuesdayVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
         
         switch section {
         case 0:
-            return 2
+            return currentData.count
         default:
-            return 4
+            return 0
         }
     }
     
@@ -136,7 +149,7 @@ extension TuesdayVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TuesdayCell", for: indexPath) as? TuesdayCell else {return UICollectionViewCell()}
             	//            cell.currentIdx = indexPath.row
 //            cell.delegate = self
-            cell.tuesdayName?.text = currentData[indexPath.row].body
+            cell.tuesdayName.text = currentData[indexPath.row].body ?? ""
             return cell
         }
             return UICollectionViewCell()
