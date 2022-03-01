@@ -51,11 +51,6 @@ class TuesdayVC: UIViewController {
     }
     
     
-    override func collectionView(_ collectionView: UICollectionView, canEditItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    
-    
 //    func setData(){
 //        currentData = []
 //        tuesdayCV.reloadData()
@@ -150,6 +145,7 @@ extension TuesdayVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
             	//            cell.currentIdx = indexPath.row
 //            cell.delegate = self
             cell.tuesdayName.text = currentData[indexPath.row].body ?? ""
+            cell.delegate = self
             return cell
         }
             return UICollectionViewCell()
