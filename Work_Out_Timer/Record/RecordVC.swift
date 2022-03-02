@@ -53,16 +53,16 @@ class RecordVC: TabmanViewController {
         
         bar.indicator.weight = .medium
         bar.indicator.tintColor = .black
-        bar.indicator.overscrollBehavior = .compress
-        bar.indicator.overscrollBehavior = .bounce
+        bar.indicator.overscrollBehavior = .none
+        bar.indicator.overscrollBehavior = .none
 //        bar.layout.alignment = .centerDistributed
         bar.layout.contentMode = .fit
 //        bar.layout.interButtonSpacing = 30
         bar.backgroundColor = .white
         configureItem()
         setCustomTitle()
-        
     }
+    
     private func configureItem() {
         navigationItem.title = "운동 기록"
     }

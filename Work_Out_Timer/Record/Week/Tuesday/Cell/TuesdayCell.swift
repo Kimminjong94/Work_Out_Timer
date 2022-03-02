@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwipeCellKit
 
 class TuesdayCell: UICollectionViewCell {
     
@@ -33,7 +34,7 @@ class TuesdayCell: UICollectionViewCell {
             // handle action by updating model with deletion
         }
 
-        // customize the action appearance
+//         customize the action appearance
         deleteAction.image = UIImage(named: "delete")
 
         return [deleteAction]

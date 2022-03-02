@@ -142,7 +142,7 @@ extension TuesdayVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
         
         if collectionView == self.tuesdayCV {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TuesdayCell", for: indexPath) as? TuesdayCell else {return UICollectionViewCell()}
-            	//            cell.currentIdx = indexPath.row
+//            cell.currentIdx = indexPath.row
 //            cell.delegate = self
             cell.tuesdayName.text = currentData[indexPath.row].body ?? ""
             cell.delegate = self
