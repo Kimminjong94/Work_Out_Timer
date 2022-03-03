@@ -30,8 +30,8 @@ class MondayVC: UIViewController {
         testSaveButton.layer.zPosition = 999
 
         
-        let mondayCell = UINib(nibName: "MondayCell", bundle: nil)
-        mondayCV.register(mondayCell, forCellWithReuseIdentifier: "MondayCell")
+        let mondayCell = UINib(nibName: "TuesdayCell", bundle: nil)
+        mondayCV.register(mondayCell, forCellWithReuseIdentifier: "TuesdayCell")
         
         mondayCV.delegate = self
         mondayCV.dataSource = self
@@ -119,7 +119,7 @@ extension MondayVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if collectionView == self.mondayCV {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MondayCell", for: indexPath) as? MondayCell else {return UICollectionViewCell()}
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TuesdayCell", for: indexPath) as? MondayCell else {return UICollectionViewCell()}
             
             cell.mondayName.text = "hi"
             return cell
