@@ -29,11 +29,11 @@ extension WednesdayVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if collectionView == self.tuesdayCV {
+        if collectionView == self.wednesCV {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TuesdayCell", for: indexPath) as? TuesdayCell else {return UICollectionViewCell()}
 //            cell.currentIdx = indexPath.row
 //            cell.delegate = self
-            cell.tuesdayName.text = currentData[indexPath.row].body ?? ""
+            cell.wednesName.text = currentData[indexPath.row].body ?? ""
             cell.delegate = self
             return cell
         }
@@ -42,8 +42,8 @@ extension WednesdayVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        if collectionView == self.tuesdayCV {
-            return CGSize(width: self.tuesdayCV.bounds.width, height: 80)
+        if collectionView == self.wednesCV {
+            return CGSize(width: self.wednesCV.bounds.width, height: 80)
         } else {
             return CGSize(width: 100, height: 100)
         }
