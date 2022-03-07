@@ -8,6 +8,9 @@
 import UIKit
 
 class WednesdayVC: UIViewController {
+    
+    var currentData: [Messages] = []
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +32,7 @@ extension WednesdayVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if collectionView == self.wednesCV {
+        if collectionView == self.wednesdayCV {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TuesdayCell", for: indexPath) as? TuesdayCell else {return UICollectionViewCell()}
 //            cell.currentIdx = indexPath.row
 //            cell.delegate = self
@@ -41,9 +44,9 @@ extension WednesdayVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        if collectionView == self.wednesCV {
-            return CGSize(width: self.wednesCV.bounds.width, height: 80)
+            
+        if collectionView == self.wednesdayCV {
+            return CGSize(width: self.wednesdayCV.bounds.width, height: 80)
         } else {
             return CGSize(width: 100, height: 100)
         }
