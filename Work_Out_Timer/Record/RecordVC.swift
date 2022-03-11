@@ -36,6 +36,8 @@ class RecordVC: TabmanViewController {
 
         
         self.dataSource = self
+        self.isScrollEnabled = false
+
 
         // Create bar
         let bar = TMBar.ButtonBar()
@@ -54,13 +56,16 @@ class RecordVC: TabmanViewController {
         bar.indicator.weight = .medium
         bar.indicator.tintColor = .black
         bar.indicator.overscrollBehavior = .none
-        bar.indicator.overscrollBehavior = .none
+        bar.layout.transitionStyle = .none
 //        bar.layout.alignment = .centerDistributed
         bar.layout.contentMode = .fit
 //        bar.layout.interButtonSpacing = 30
+        
         bar.backgroundColor = .white
         configureItem()
         setCustomTitle()
+        
+        
     }
     
     private func configureItem() {
@@ -71,18 +76,19 @@ class RecordVC: TabmanViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
-    func goToLogin() {
-        if Auth.auth().currentUser?.email == nil {
-            guard let navigation = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "BaseTabBarViewController") as? BaseTabBarViewController else { return }
-            navigation.modalPresentationStyle = .overFullScreen
-            
-            self.present(navigation, animated: true)
-        }
-    }
-
-    @IBAction func saveButtonPressed(_ sender: Any) {
-        
-    }
+    
+//    func goToLogin() {
+//        if Auth.auth().currentUser?.email == nil {
+//            guard let navigation = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "BaseTabBarViewController") as? BaseTabBarViewController else { return }
+//            navigation.modalPresentationStyle = .overFullScreen
+//
+//            self.present(navigation, animated: true)
+//        }
+//    }
+//
+//    @IBAction func saveButtonPressed(_ sender: Any) {
+//
+//    }
     
 }
     
@@ -121,5 +127,30 @@ extension RecordVC: PageboyViewControllerDataSource, TMBarDataSource {
 
     func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
         return nil
+    }
+    
+
+    
+    
+}
+
+extension RecordVC {
+    var isPagingEnabled: Bool {
+        get {
+            var isEnabled: Bool = true
+            for view in view.subviews {
+                if let subView = view as? UIScrollView {
+                    isEnabled = subView.isScrollEnabled
+                }
+            }
+            return isEnabled
+        }
+        set {
+            for view in view.subviews {
+                if let subView = view as? UIScrollView {
+                    subView.isScrollEnabled = newValue
+                }
+            }
+        }
     }
 }

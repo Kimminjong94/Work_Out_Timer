@@ -6,6 +6,7 @@
 
 import UIKit
 import Firebase
+import SwipeCellKit
 
 //protocol ViewControllerDelegate {
 //    func sendData(data: UITextField!, idx: Int)
@@ -96,9 +97,7 @@ class TuesdayVC: UIViewController {
         tuesdayCV.reloadData()
         
     }
-    
-    
-    
+
     @IBAction func saveButtonPressed(_ sender: Any) {
         
 //        print(TuesdayCell().tuesdayName?.text)
@@ -126,6 +125,7 @@ class TuesdayVC: UIViewController {
     }
     
 }
+//MARK: - collectionviewcell
 
 extension TuesdayVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -139,7 +139,6 @@ extension TuesdayVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         if collectionView == self.tuesdayCV {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TuesdayCell", for: indexPath) as? TuesdayCell else {return UICollectionViewCell()}
 //            cell.currentIdx = indexPath.row
@@ -158,5 +157,34 @@ extension TuesdayVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
         } else {
             return CGSize(width: 100, height: 100)
         }
+    }
+}
+
+//MARK: - SwipeCellKit - delete collectionviewcell library
+
+extension TuesdayVC: SwipeCollectionViewCellDelegate {
+    func collectionView(_ collectionView: UICollectionView, editActionsForItemAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        guard orientation == .right else { return nil }
+
+        let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
+            self.currentData.remove(at: indexPath.row)
+            self.db.collection("Tuesday").document().delete() { err in
+                if let err = err {
+                    print("Error removing document: \(err)")
+                } else {
+                    print("Document successfully removed!")
+                }
+            }
+            
+        }
+        deleteAction.image = UIImage(named: "delete")
+        return [deleteAction]
+    }
+
+    func collectionView(_ collectionView: UICollectionView, editActionsOptionsForItemAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
+        var options = SwipeOptions()
+        options.expansionStyle = .destructive
+        options.transitionStyle = .border
+        return options
     }
 }

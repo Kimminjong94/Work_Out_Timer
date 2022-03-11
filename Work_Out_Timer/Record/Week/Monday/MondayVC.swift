@@ -33,6 +33,7 @@ class MondayVC: UIViewController {
         let mondayCell = UINib(nibName: "TuesdayCell", bundle: nil)
         mondayCV.register(mondayCell, forCellWithReuseIdentifier: "TuesdayCell")
         
+        
         mondayCV.delegate = self
         mondayCV.dataSource = self
         

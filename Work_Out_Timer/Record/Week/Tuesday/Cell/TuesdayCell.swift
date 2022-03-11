@@ -8,9 +8,9 @@
 import UIKit
 import SwipeCellKit
 
-class TuesdayCell: UICollectionViewCell {
+class TuesdayCell: SwipeCollectionViewCell {
     
-    var delegate : UICollectionViewDelegate?
+//    var delegate : UICollectionViewDelegate?
     
 //    var currentIdx: Int = 0
 
@@ -27,18 +27,18 @@ class TuesdayCell: UICollectionViewCell {
 //        tuesdayName.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
     }
     
-    func collectionView(_ collectionView: UICollectionView, editActionsForItemAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
-        guard orientation == .right else { return nil }
-
-        let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
-            // handle action by updating model with deletion
-        }
-
-//         customize the action appearance
-        deleteAction.image = UIImage(named: "delete")
-
-        return [deleteAction]
-    }
+//    func collectionView(_ collectionView: UICollectionView, editActionsForItemAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+//        guard orientation == .right else { return nil }
+//
+//        let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
+//            // handle action by updating model with deletion
+//        }
+//
+////         customize the action appearance
+//        deleteAction.image = UIImage(named: "delete")
+//
+//        return [deleteAction]
+//    }
     
 
     
