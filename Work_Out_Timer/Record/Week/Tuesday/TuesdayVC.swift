@@ -71,7 +71,8 @@ class TuesdayVC: UIViewController {
                 if let snapshotDocuments = querySnapshot?.documents {
                     for doc in snapshotDocuments {
                         let data = doc.data()
-                        if let messageSender = data["sender"] as? String, let messageBody = data["name"] as? String {
+                        if let messageSender = data["sender"] as? String,
+                            let messageBody = data["name"] as? String {
                             let newMessage = Messages(sender: messageSender, body: messageBody)
 //                            self.currentData = [messageBody]
 //                            self.currentData = [newMessage.body]
@@ -168,13 +169,15 @@ extension TuesdayVC: SwipeCollectionViewCellDelegate {
 
         let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
             self.currentData.remove(at: indexPath.row)
-            self.db.collection("Tuesday").document().delete() { err in
-                if let err = err {
-                    print("Error removing document: \(err)")
-                } else {
-                    print("Document successfully removed!")
-                }
+            
+            self.db.collection("Tuesday").document("\(messageBody)").delete() { err in
+            if let err = err {
+              print("Error removing document: \(err)")
             }
+            else {
+              print("Document successfully removed!")
+            }
+          }
             
         }
         deleteAction.image = UIImage(named: "delete")
@@ -187,4 +190,8 @@ extension TuesdayVC: SwipeCollectionViewCellDelegate {
         options.transitionStyle = .border
         return options
     }
+    func deleteMessage(message: Messages) {
+
+    }
+
 }
