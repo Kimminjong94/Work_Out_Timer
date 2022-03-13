@@ -29,6 +29,9 @@ class TuesdayVC: UIViewController {
     let db = Firestore.firestore()
     var currentData: [Messages] = []
     var lineCount = 2
+
+    
+    
     
 //    var name: String = TuesdayCell().tuesdayName.text!
         
@@ -164,13 +167,18 @@ extension TuesdayVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
 //MARK: - SwipeCellKit - delete collectionviewcell library
 
 extension TuesdayVC: SwipeCollectionViewCellDelegate {
+    
+
+    
+    
+    
     func collectionView(_ collectionView: UICollectionView, editActionsForItemAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
         guard orientation == .right else { return nil }
 
         let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
             self.currentData.remove(at: indexPath.row)
             
-            self.db.collection("Tuesday").document("\(messageBody)").delete() { err in
+            self.db.collection("Tuesday").document("Pcr200V4eufJjw9F69ol").delete() { err in
             if let err = err {
               print("Error removing document: \(err)")
             }
