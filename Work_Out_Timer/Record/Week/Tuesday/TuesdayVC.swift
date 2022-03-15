@@ -183,7 +183,6 @@ extension TuesdayVC: SwipeCollectionViewCellDelegate {
             }
             else {
               print("Document successfully removed!")
-                self.tuesdayCV.reloadData()
             }
           }
         }
