@@ -146,7 +146,7 @@ extension TuesdayVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
 //            cell.delegate = self
             cell.tuesdayName.text = currentData[indexPath.row].body ?? ""
             cell.delegate = self
-            print(self.db.collection("Tuesday").document().documentID)
+//            print(self.db.collection("Tuesday").document().documentID)
             return cell
         }
             return UICollectionViewCell()
@@ -172,10 +172,15 @@ extension TuesdayVC: SwipeCollectionViewCellDelegate {
 
 
         let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
+            
+
             self.currentData.remove(at: indexPath.row)
+            self.tuesdayCV.reloadData()
             
             let myRef = self.db.collection("Tuesday")
             let tempId = myRef.document().documentID
+            
+            print(tempId)
 
             myRef.document(tempId).delete() { err in
             if let err = err {
@@ -185,9 +190,13 @@ extension TuesdayVC: SwipeCollectionViewCellDelegate {
               print("Document successfully removed!")
             }
           }
+            
+
         }
         deleteAction.image = UIImage(named: "delete")
         return [deleteAction]
+        
+        
     }
 
     func collectionView(_ collectionView: UICollectionView, editActionsOptionsForItemAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
@@ -195,7 +204,10 @@ extension TuesdayVC: SwipeCollectionViewCellDelegate {
         options.expansionStyle = .destructive
         options.transitionStyle = .border
         return options
+        
+        
     }
+    
     func deleteMessage(message: Messages) {
 
     }
