@@ -8,7 +8,9 @@
 import UIKit
 
 class SundayVC: UIViewController {
-
+    
+    @IBOutlet weak var sundayTV: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
