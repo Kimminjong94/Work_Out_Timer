@@ -166,8 +166,8 @@
 		582EC89727BE428700B3542A /* Sunday */ = {
 			isa = PBXGroup;
 			children = (
-				584DC4AD27B4FACA007480F4 /* SundayVC.swift */,
 				588783EA27E362DE007015E1 /* Cell */,
+				584DC4AD27B4FACA007480F4 /* SundayVC.swift */,
 			);
 			path = Sunday;
 			sourceTree = "<group>";

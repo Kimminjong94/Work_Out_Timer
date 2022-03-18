@@ -8,7 +8,13 @@
 import UIKit
 
 class SundayCell: UITableViewCell {
-
+    
+    @IBOutlet weak var sundayName: UILabel!
+    
+    @IBOutlet weak var sundayWeight: UILabel!
+    @IBOutlet weak var sundaySet: UILabel!
+    @IBOutlet weak var sundayTimes: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
