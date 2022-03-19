@@ -8,19 +8,6 @@ import UIKit
 import Firebase
 import SwipeCellKit
 
-//protocol ViewControllerDelegate {
-//    func sendData(data: UITextField!, idx: Int)
-//}
-//
-//extension TuesdayVC: ViewControllerDelegate {
-//    func sendData(data: UITextField!, idx: Int) {
-//        currentData[idx] = data.text ?? ""
-//    }
-
-//
-
-
-
 class TuesdayVC: UIViewController {
     
     @IBOutlet weak var tuesdayCV: UICollectionView!
@@ -50,12 +37,7 @@ class TuesdayVC: UIViewController {
 
 
     }
-    
-    
-//    func setData(){
-//        currentData = []
-//        tuesdayCV.reloadData()
-//    }
+
     //MARK: - Firebase에서 데이터 불러오기
     func loadMessages() {
         
@@ -90,14 +72,14 @@ class TuesdayVC: UIViewController {
         
     }
     
-    @IBAction func plusButtonPressed(_ sender: Any) {
-        
-        self.lineCount += 1
-        let indexPath = IndexPath(row: self.currentData.count - 1, section: 0)
-        self.tuesdayCV.scrollToItem(at: indexPath, at: .top, animated: true)
-        tuesdayCV.reloadData()
-        
-    }
+//    @IBAction func plusButtonPressed(_ sender: Any) {
+//
+//        self.lineCount += 1
+//        let indexPath = IndexPath(row: self.currentData.count - 1, section: 0)
+//        self.tuesdayCV.scrollToItem(at: indexPath, at: .top, animated: true)
+//        tuesdayCV.reloadData()
+//
+//    }
 
     @IBAction func saveButtonPressed(_ sender: Any) {
         
@@ -135,7 +117,7 @@ extension TuesdayVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
         case 0:
             return currentData.count
         default:
-            return 0
+            return 3
         }
     }
     
@@ -182,7 +164,7 @@ extension TuesdayVC: SwipeCollectionViewCellDelegate {
             
             print(tempId)
 
-            myRef.document(tempId).delete() { err in
+            myRef.document("\(tempId)").delete() { err in
             if let err = err {
               print("Error removing document: \(err)")
             }
