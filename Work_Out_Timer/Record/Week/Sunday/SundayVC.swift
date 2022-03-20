@@ -109,6 +109,12 @@ extension SundayVC: UITableViewDelegate, UITableViewDataSource {
         
         let cell = sundayTV.dequeueReusableCell(withIdentifier: "SundayCell", for: indexPath) as! SundayCell
         cell.sundayName.text = currentData[indexPath.row].body ?? ""
+        
+        let myRef = self.db.collection("Sunday")
+        let tempId = myRef.document().documentID
+        
+        print(tempId)
+
 //        cell.delegate = self
         return cell
     }
@@ -124,14 +130,14 @@ extension SundayVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             sundayTV.beginUpdates()
-            currentData.remove(at: indexPath.row)
-            //여기서 파이어베이스 삭제하기
+            
+            //
             let myRef = self.db.collection("Sunday")
             let tempId = myRef.document().documentID
             
             print(tempId)
 
-            myRef.document("\(tempId)").delete() { err in
+            myRef.document(tempId).delete() { err in
             if let err = err {
               print("Error removing document: \(err)")
             }
@@ -139,9 +145,8 @@ extension SundayVC: UITableViewDelegate, UITableViewDataSource {
               print("Document successfully removed!")
             }
           }
-            
+            currentData.remove(at: indexPath.row)
             sundayTV.deleteRows(at: [indexPath], with: .fade)
-            
             sundayTV.endUpdates()
         }
     }
