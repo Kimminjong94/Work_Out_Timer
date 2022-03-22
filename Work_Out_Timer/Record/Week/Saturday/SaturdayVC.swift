@@ -11,7 +11,7 @@ import IQKeyboardManagerSwift
 
 class SaturdayVC: UIViewController {
     
-    @IBOutlet weak var sundayTV: UITableView!
+    @IBOutlet weak var saturdayTV: UITableView!
     @IBOutlet weak var sundayName: UITextField!
     
     let db = Firestore.firestore()
@@ -21,16 +21,16 @@ class SaturdayVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        sundayTV.register(UINib(nibName: "SundayCell", bundle: nil), forCellReuseIdentifier: "SundayCell")
+        saturdayTV.register(UINib(nibName: "SundayCell", bundle: nil), forCellReuseIdentifier: "SundayCell")
         
-        sundayTV.delegate = self
-        sundayTV.dataSource = self
+        saturdayTV.delegate = self
+        saturdayTV.dataSource = self
         
         loadMessages()
-        self.sundayTV.reloadData()
+        self.saturdayTV.reloadData()
         
         
-        sundayTV.allowsMultipleSelectionDuringEditing = true
+        saturdayTV.allowsMultipleSelectionDuringEditing = true
 
     }
     
@@ -56,9 +56,9 @@ class SaturdayVC: UIViewController {
 //                            self.currentData = [newMessage.body]
                             DispatchQueue.main.async() {
                                 self.currentData.append(newMessage)
-                                self.sundayTV.reloadData()
+                                self.saturdayTV.reloadData()
                                 let indexPath = IndexPath(row: self.currentData.count - 1, section: 0)
-                                self.sundayTV.scrollToRow(at: indexPath, at: .top, animated: false)
+                                self.saturdayTV.scrollToRow(at: indexPath, at: .top, animated: false)
                              }
                         }
                     }
