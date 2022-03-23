@@ -70,8 +70,11 @@ class SundayVC: UIViewController {
     
     @IBAction func plusButtonTapped(_ sender: Any) {
         
+        let myRef = self.db.collection("Sunday")
+        let tempId = myRef.document().documentID
+        
         if let messageSender = Auth.auth().currentUser?.email, let messageeBody = sundayName?.text {
-            db.collection("Sunday").addDocument(data: [
+            db.collection("Sunday").document(tempId).collection("sundaySub").addDocument(data: [
                 "sender": messageSender,
                 "name": messageeBody ?? "",
                 "date": Date().timeIntervalSince1970
@@ -110,10 +113,10 @@ extension SundayVC: UITableViewDelegate, UITableViewDataSource {
         let cell = sundayTV.dequeueReusableCell(withIdentifier: "SundayCell", for: indexPath) as! SundayCell
         cell.sundayName.text = currentData[indexPath.row].body ?? ""
         
-        let myRef = self.db.collection("Sunday")
-        let tempId = myRef.document().documentID
+//        let myRef = self.db.collection("Sunday")
+//        let tempId = myRef.document().documentID
         
-        print(tempId)
+//        print(tempId)
 
 //        cell.delegate = self
         return cell
@@ -137,7 +140,7 @@ extension SundayVC: UITableViewDelegate, UITableViewDataSource {
             
             print(tempId)
 
-            myRef.document(tempId).delete() { err in
+            myRef.document(tempId).collection("sundaySub").document(tempId).delete() { err in
             if let err = err {
               print("Error removing document: \(err)")
             }

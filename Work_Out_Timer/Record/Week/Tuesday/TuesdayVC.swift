@@ -83,10 +83,13 @@ class TuesdayVC: UIViewController {
 
     @IBAction func saveButtonPressed(_ sender: Any) {
         
+        let myRef = self.db.collection("Tuesday")
+        let tempId = myRef.document().documentID
+        
 //        print(TuesdayCell().tuesdayName?.text)
 //        print("\(currentData)")
         if let messageSender = Auth.auth().currentUser?.email, let messageeBody = tuesdayName?.text {
-            db.collection("Tuesday").addDocument(data: [
+            db.collection("Tuesday").document(tempId).collection("tuesday").addDocument(data: [
                 "sender": messageSender,
                 "name": messageeBody ?? "",
                 "date": Date().timeIntervalSince1970
