@@ -37,7 +37,10 @@ class SundayVC: UIViewController {
     //MARK: - Firebase에서 데이터 불러오기
     func loadMessages() {
         
-        db.collection("Sunday")
+        let myRef = self.db.collection("Sunday")
+        let tempId = myRef.document().documentID
+        
+        db.collection("Sunday").document(tempId).collection("sundaySub")
             .order(by: "date")
             .addSnapshotListener { (querySnapshot, error) in
             
