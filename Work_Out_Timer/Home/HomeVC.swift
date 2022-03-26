@@ -8,7 +8,6 @@ class HomeVC: UIViewController {
     
     @IBOutlet weak var resetButton: UIButton!
     
-    @IBOutlet weak var testCountdown: SRCountdownTimer!
     
     var myTimer = Timer()
     var count = 0
@@ -17,7 +16,6 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        testCountdown.start(beginingValue: 3)
 
         
         self.startButton.layer.cornerRadius = 12
