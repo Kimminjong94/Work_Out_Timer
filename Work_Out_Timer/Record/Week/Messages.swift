@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import Firebase
 
 
 struct Messages {
     let sender: String
     let body: String
+    let documentID: String
     
 }

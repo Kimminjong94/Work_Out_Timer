@@ -16,6 +16,7 @@ class SundayVC: UIViewController {
     
     let db = Firestore.firestore()
     var currentData: [Messages] = []
+    var documentID: String
     var lineCount = 2
     
     override func viewDidLoad() {
@@ -26,8 +27,9 @@ class SundayVC: UIViewController {
         sundayTV.delegate = self
         sundayTV.dataSource = self
         
-        loadMessages()
         self.sundayTV.reloadData()
+        loadMessages()
+
         
         
         sundayTV.allowsMultipleSelectionDuringEditing = true
@@ -40,7 +42,7 @@ class SundayVC: UIViewController {
         let myRef = self.db.collection("Sunday")
         let tempId = myRef.document().documentID
         
-        db.collection("Sunday").document(tempId).collection("sundaySub")
+        myRef.document(tempId).collection("sundaySub")
             .order(by: "date")
             .addSnapshotListener { (querySnapshot, error) in
             
@@ -97,6 +99,33 @@ class SundayVC: UIViewController {
             }
         }
     }
+    
+    func saveData(spot: Messages, completion: @escaping (Bool) -> ()) {
+        let db = Firestore.firestore()
+        
+        if self.documentID == "" {
+//            var ref = DocumentReference? = nil
+            if let messageSender = Auth.auth().currentUser?.email, let messageeBody = sundayName?.text {
+                db.collection("Sunday").document(spot.documentID).collection("sundaySub").addDocument(data: [
+                    "sender": messageSender,
+                    "name": messageeBody ?? "",
+                    "date": Date().timeIntervalSince1970
+    //                    "weight": mondayWeight,
+    //                    "set": mondaySet,
+    //                    "times": mondayTimes
+                ]) { (error) in
+                    if let e = error {
+                        print("there is error with firestore, \(e)")
+                    } else {
+                        print("success saving data")
+                        
+                        DispatchQueue.main.async {
+                            self.sundayName.text = ""
+                        }
+                    }
+                }
+        }
+    }
 }
 
 extension SundayVC: UITableViewDelegate, UITableViewDataSource {
@@ -114,7 +143,7 @@ extension SundayVC: UITableViewDelegate, UITableViewDataSource {
         
         
         let cell = sundayTV.dequeueReusableCell(withIdentifier: "SundayCell", for: indexPath) as! SundayCell
-        cell.sundayName.text = currentData[indexPath.row].body ?? ""
+        cell.sundayName.text = currentData[indexPath.row].body
         
 //        let myRef = self.db.collection("Sunday")
 //        let tempId = myRef.document().documentID
