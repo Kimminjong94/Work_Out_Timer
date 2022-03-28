@@ -55,8 +55,9 @@ class SundayVC: UIViewController {
                     for doc in snapshotDocuments {
                         let data = doc.data()
                         if let messageSender = data["sender"] as? String,
-                            let messageBody = data["name"] as? String {
-                            let newMessage = Messages(sender: messageSender, body: messageBody)
+                            let messageBody = data["name"] as? String,
+                            let messagedcoumentID = data["documentID"] as? String {
+                            let newMessage = Messages(sender: messageSender, body: messageBody, documentID: messagedcoumentID)
 //                            self.currentData = [messageBody]
 //                            self.currentData = [newMessage.body]
                             DispatchQueue.main.async() {
@@ -187,4 +188,5 @@ extension SundayVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     
+}
 }
