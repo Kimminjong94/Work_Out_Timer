@@ -16,7 +16,7 @@ class SundayVC: UIViewController {
     
     let db = Firestore.firestore()
     var currentData: [Messages] = []
-    var documentID: String
+    var documentID: String = ""
     var lineCount = 2
     
     override func viewDidLoad() {
@@ -127,6 +127,8 @@ class SundayVC: UIViewController {
                 }
         }
     }
+    }
+    
 }
 
 extension SundayVC: UITableViewDelegate, UITableViewDataSource {
@@ -189,4 +191,4 @@ extension SundayVC: UITableViewDelegate, UITableViewDataSource {
     
     
 }
-}
+

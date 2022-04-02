@@ -58,7 +58,7 @@ class TuesdayVC: UIViewController {
                         let data = doc.data()
                         if let messageSender = data["sender"] as? String,
                             let messageBody = data["name"] as? String {
-                            let newMessage = Messages(sender: messageSender, body: messageBody)
+                            let newMessage = Messages(sender: messageSender, body: messageBody, documentID: tempId)
 //                            self.currentData = [messageBody]
 //                            self.currentData = [newMessage.body]
                             DispatchQueue.main.async() {
