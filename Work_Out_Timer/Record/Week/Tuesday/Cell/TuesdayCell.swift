@@ -24,28 +24,7 @@ class TuesdayCell: SwipeCollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-//        tuesdayName.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
     }
     
-//    func collectionView(_ collectionView: UICollectionView, editActionsForItemAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
-//        guard orientation == .right else { return nil }
-//
-//        let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
-//            // handle action by updating model with deletion
-//        }
-//
-////         customize the action appearance
-//        deleteAction.image = UIImage(named: "delete")
-//
-//        return [deleteAction]
-//    }
-    
-
-    
-    
-//    /* 텍스트필드의 값이 변경될 때 */
-//    @objc func textFieldDidChange(_ textField: UITextField) {
-//        delegate?.sendData(data: textField, idx: currentIdx)
-//    }
 
 }
