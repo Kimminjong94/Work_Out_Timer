@@ -15,6 +15,15 @@ class WednesdayVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let wednesCell = UINib(nibName: "TuesdayCell", bundle: nil)
+        wednesCV.register(wednesCell, forCellWithReuseIdentifier: "TuesdayCell")
+        
+        wednesCV.delegate = self
+        wednesCV.dataSource = self
+        
+//        setData()
+        self.wednesCV.reloadData()
+        
 
     }
 }
